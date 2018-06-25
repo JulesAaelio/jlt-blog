@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
+import {RoutingModule} from './routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import {AuthModule} from './auth/auth.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AuthModule
+    AuthModule,
+    RoutingModule
   ],
   bootstrap: [AppComponent]
 })

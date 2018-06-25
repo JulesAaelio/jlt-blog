@@ -15,6 +15,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    OAuth2Service.initLogin('/');
+    // OAuth2Service.initLogin('/');
   }
 }

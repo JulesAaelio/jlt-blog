@@ -10,11 +10,11 @@ import {OAuth2Service} from '../oauth2.service';
 export class AuthEndpointComponent implements OnInit {
 
   constructor(private ar: ActivatedRoute, private as: OAuth2Service) {
-    this.ar.fragment.subscribe(fragment => {
-      if (fragment) {
-        this.as.login(fragment);
-      }
-    });
+    // this.ar.fragment.subscribe(fragment => {
+    //   if (fragment) {
+    //     this.as.login(fragment);
+    //   }
+    // });
   }
 
   ngOnInit() {
