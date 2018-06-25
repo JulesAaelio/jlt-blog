@@ -12,7 +12,7 @@ import {RouterModule} from '@angular/router';
   ],
   declarations: [
     AuthEndpointComponent,
-    AuthBaseComponent
+    AuthBaseComponent,
   ],
   providers : [
     OAuth2Service
