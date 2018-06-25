@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  rest_end_point: 'http://api.blog.perso.local',
+  auth_end_point: 'http://api.perso.local',
+  app_id: '2_4gbt5cvqpeo0skgwcowwg080ggwcsccoo04w8s44og00gs8cso',
 };
 
 /*
