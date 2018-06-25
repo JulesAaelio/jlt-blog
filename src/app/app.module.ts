@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
 import {RoutingModule} from './routing/routing.module';
+import {BlogModule} from './blog/blog.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {RoutingModule} from './routing/routing.module';
     BrowserModule,
     HttpClientModule,
     AuthModule,
-    RoutingModule
+    RoutingModule,
+    BlogModule
   ],
   bootstrap: [AppComponent]
 })
