@@ -23,9 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./src/styles.scss",
+              "./node_modules/prismjs/themes/prism.css",
+              "./node_modules/prismjs/themes/prism-okaidia.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/prismjs/prism.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -44,13 +48,20 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "serve": {
+              "extractCss": true,
+              "namedChunks": true,
+              "vendorChunk": true,
+              "commonChunk": true,
+              "verbose": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "jlt-blog:build"
+            "browserTarget": "jlt-blog:build:serve"
           },
           "configurations": {
             "production": {
