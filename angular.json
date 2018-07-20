@@ -29,7 +29,8 @@
             ],
             "scripts": [
               "./node_modules/prismjs/prism.js"
-            ]
+            ],
+            "extractCss":true
           },
           "configurations": {
             "production": {
