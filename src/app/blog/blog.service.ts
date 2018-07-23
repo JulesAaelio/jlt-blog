@@ -19,6 +19,10 @@ export class BlogService {
   }
 
   getArticle(id) {
+<<<<<<< HEAD
      return this.http.get<Article>(environment.rest_end_point + '/articles/' + id);
+=======
+    return this.http.get<Article>(environment.rest_end_point + '/articles/' + id);
+>>>>>>> cfcd44555c542f84a8bede0ec63d5a23038a1cf6
   }
 }
