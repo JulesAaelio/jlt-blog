@@ -5,6 +5,7 @@ import { BlogBaseComponent } from './blog-base/blog-base.component';
 import {RouterModule} from '@angular/router';
 import {EditorModule} from '@tinymce/tinymce-angular';
 import {FormsModule} from '@angular/forms';
+import {ReadArticleComponent} from './read-article/read-article.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {FormsModule} from '@angular/forms';
   ],
   declarations: [
     AddArticleComponent,
-    BlogBaseComponent
+    BlogBaseComponent,
+    ReadArticleComponent
   ],
   exports: [
     BlogBaseComponent
