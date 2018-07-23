@@ -17,4 +17,8 @@ export class BlogService {
       content
     });
   }
+
+  getArticle(id) {
+     return this.http.get<Article>(environment.rest_end_point + '/articles/' + id);
+  }
 }
