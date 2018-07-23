@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   rest_end_point: 'http://api.blog.perso.local',
   auth_end_point: 'http://api.perso.local',
-  app_id: '2_4gbt5cvqpeo0skgwcowwg080ggwcsccoo04w8s44og00gs8cso',
+  app_id: '3_2ckxcze1y134koso8owk84k00woc8gwc44ocwskko4o088ws00',
 };
 
 /*

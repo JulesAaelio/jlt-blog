@@ -21,5 +21,4 @@ export class ReadArticleComponent implements OnInit {
       });
     });
   }
-
 }
