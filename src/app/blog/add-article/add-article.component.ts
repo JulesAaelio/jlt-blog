@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {conf} from './../editor-conf';
+import {BlogService} from '../blog.service';
 
 @Component({
   selector: 'app-add-article',
@@ -8,9 +9,22 @@ import {conf} from './../editor-conf';
 })
 export class AddArticleComponent implements OnInit {
   conf = conf;
+  title;
   content;
-  constructor() { }
+  editor;
+
+  constructor(private blogService: BlogService) {
+  }
   ngOnInit() {
   }
 
+  uploadArticle() {
+    this.editor
+      .uploadImages()
+      .then(
+        this.blogService.postArticle(this.title, this.content)
+          .subscribe()
+      );
+    return;
+  }
 }
