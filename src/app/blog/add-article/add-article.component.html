@@ -1,8 +1,5 @@
 <h1>TEST</h1>
-<section [innerHTML]="content">
-
-</section>
-<p>
-  add-article works!
-</p>
-<editor [(ngModel)]="content" [init]="conf"></editor>
+<label for="article-title" hidden>Titre :</label>
+<input type="text" [(ngModel)]="title" id="article-title">
+<editor [(ngModel)]="content" [init]="conf" (onInit)="editor = $event.editor"></editor>
+<button type="button" (click)="uploadArticle()">Publier</button>
