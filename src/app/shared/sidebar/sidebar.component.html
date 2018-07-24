@@ -1,0 +1,16 @@
+<div class="sidebar col s12 m12 l3">
+  <img class="img-rounded" [src]="avatar_url">
+  <div>
+    <h1>{{data.name}}</h1>
+    <blockquote>
+      {{data.description}}
+    </blockquote>
+  </div>
+  <div class="networks">
+    <a class="fab fa-2x fa-github" target="_blank" [href]="'https://github.com/'+data.github"></a>
+    <a class="fab fa-2x fa-linkedin" target="_blank" [href]="'https://fr.linkedin.com/in/'+data.linkedin"></a>
+    <a class="fab fa-2x fa-twitter" target="_blank" [href]="'https://twitter.com/'+data.twitter"></a>
+    <a class="fas fa-2x fa-globe" target="_blank" [href]="data.website"></a>
+    <a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>
+  </div>
+</div>
