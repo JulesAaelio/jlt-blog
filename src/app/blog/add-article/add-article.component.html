@@ -1,5 +1,5 @@
 <h1>TEST</h1>
 <label for="article-title" hidden>Titre :</label>
-<input type="text" [(ngModel)]="title" id="article-title">
-<editor [(ngModel)]="content" [init]="conf" (onInit)="editor = $event.editor"></editor>
+<input type="text" [(ngModel)]="article.title" id="article-title">
+<editor [(ngModel)]="article.content" [init]="conf" (onInit)="editor = $event.editor"></editor>
 <button type="button" (click)="uploadArticle()">Publier</button>
