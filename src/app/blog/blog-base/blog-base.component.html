@@ -1,5 +1,5 @@
 <div>
-  <div class="row blog-row">
+  <div class="row blog-row" [class.inverse-when-small]="!isLanding">
     <app-sidebar></app-sidebar>
     <div class="col s12 m12 l9 push-l3">
       <router-outlet></router-outlet>

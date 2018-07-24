@@ -34,10 +34,12 @@ export class AddArticleComponent implements OnInit {
       .uploadImages()
       .then(() => {
         let promise;
+        const plainContent = this.editor.getContent({format: 'text'});
+        this.article.sample = plainContent.slice(0, 250);
         if (this.article.id) {
-          promise = this.blogService.putArticle(this.article.id, this.article.title, this.article.content);
+          promise = this.blogService.putArticle(this.article.id, this.article.title, this.article.content, this.article.sample);
         } else {
-          promise = this.blogService.postArticle(this.article.title, this.article.content);
+          promise = this.blogService.postArticle(this.article.title, this.article.content, this.article.sample);
         }
 
         promise.subscribe(article => {

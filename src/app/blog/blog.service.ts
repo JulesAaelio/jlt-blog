@@ -11,10 +11,11 @@ export class BlogService {
   constructor(private http: HttpClient) {
   }
 
-  postArticle(title, content) {
+  postArticle(title, content, sample) {
     return this.http.post<Article>(environment.rest_end_point + '/articles', {
       title,
-      content
+      content,
+      sample
     });
   }
 
@@ -22,10 +23,11 @@ export class BlogService {
     return this.http.patch<Article>(environment.rest_end_point + '/articles/' + id + '/illustration', formData);
   }
 
-  putArticle(id, title, content) {
+  putArticle(id, title, content, sample) {
     return this.http.put<Article>(environment.rest_end_point + '/articles/' + id, {
       title,
-      content
+      content,
+      sample
     });
   }
 

@@ -43,7 +43,7 @@ a {
   blockquote {
     text-align: justify;
     font-size: 1.1em;
-    overflow-y: scroll;
+    //overflow-y: scroll;
   }
 
   .networks {
@@ -69,8 +69,12 @@ a {
 @media #{$medium-and-down} {
   .blog-row {
     display: flex;
-    flex-direction: column-reverse;
     margin-bottom: 0;
+    flex-direction: column;
+  }
+
+  .blog-row.inverse-when-small {
+    flex-direction: column-reverse;
   }
 
   .sidebar {
@@ -93,4 +97,15 @@ a {
 .article-illustration {
   width: 100%;
   height: auto;
+}
+
+.card-content {
+  text-align: justify;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+
 }

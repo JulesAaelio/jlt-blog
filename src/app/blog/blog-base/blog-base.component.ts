@@ -21,6 +21,7 @@ import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-sass';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-php';
+import {Router} from '@angular/router';
 
 declare var Prism: any;
 
@@ -32,7 +33,11 @@ declare var Prism: any;
 })
 export class BlogBaseComponent implements OnInit, AfterViewChecked {
 
-  constructor() { }
+  isLanding = false;
+
+  constructor(private router: Router) {
+    this.isLanding = (this.router.url === '/');
+  }
 
   ngOnInit() {
   }
