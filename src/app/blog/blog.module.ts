@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import {EditorModule} from '@tinymce/tinymce-angular';
 import {FormsModule} from '@angular/forms';
 import {ReadArticleComponent} from './read-article/read-article.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {ReadArticleComponent} from './read-article/read-article.component';
   declarations: [
     AddArticleComponent,
     BlogBaseComponent,
-    ReadArticleComponent
+    ReadArticleComponent,
+    SidebarComponent
   ],
   exports: [
     BlogBaseComponent

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BlogService} from '../blog.service';
 import {ActivatedRoute} from '@angular/router';
+import {Article} from '../model/Article';
 
 @Component({
   selector: 'app-read-article',
@@ -9,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ReadArticleComponent implements OnInit {
 
-  content = '<p></p>';
+  article: Article = new Article();
 
   constructor(private blogService: BlogService, private ar: ActivatedRoute) {
   }
@@ -17,7 +18,7 @@ export class ReadArticleComponent implements OnInit {
   ngOnInit() {
     this.ar.params.subscribe(params => {
       this.blogService.getArticle(params.id).subscribe(article => {
-        this.content = article.content;
+        this.article = article;
       });
     });
   }
