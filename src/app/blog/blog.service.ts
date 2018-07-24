@@ -18,6 +18,10 @@ export class BlogService {
     });
   }
 
+  patchArticleIllustration(id, formData) {
+    return this.http.patch<Article>(environment.rest_end_point + '/articles/' + id + '/illustration', formData);
+  }
+
   putArticle(id, title, content) {
     return this.http.put<Article>(environment.rest_end_point + '/articles/' + id, {
       title,
