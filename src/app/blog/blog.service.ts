@@ -18,6 +18,13 @@ export class BlogService {
     });
   }
 
+  putArticle(id, title, content) {
+    return this.http.put<Article>(environment.rest_end_point + '/articles/' + id, {
+      title,
+      content
+    });
+  }
+
   getArticle(id) {
     return this.http.get<Article>(environment.rest_end_point + '/articles/' + id);
   }

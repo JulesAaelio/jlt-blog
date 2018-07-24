@@ -1,5 +1,5 @@
 export const conf = {
-  plugins: 'codesample',
+  plugins: 'codesample code',
   menubar: false,
   toolbar: 'formatselect | bold italic underline | alignleft alignright aligncenter alignjustify | codesample',
   content_css: '/styles.css',
