@@ -5,5 +5,6 @@ export const conf = {
   content_css: '/styles.css',
   images_upload_url: 'http://api.blog.perso.local/articles/images',
   automatic_uploads: false,
-  images_upload_base_path: 'http://api.blog.perso.local'
+  images_upload_base_path: 'http://api.blog.perso.local',
+  skin_url: '/assets/skins/lightgray'
 };

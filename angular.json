@@ -19,12 +19,24 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "/src",
+                "output": "/"
+              },
+              {
+                "glob": "skins/**/*",
+                "input": "node_modules/tinymce",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "./src/styles.scss",
-              "./node_modules/prismjs/themes/prism.css",
               "./node_modules/prismjs/themes/prism-okaidia.css"
             ],
             "scripts": [
