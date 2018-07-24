@@ -7,6 +7,8 @@ import {EditorModule} from '@tinymce/tinymce-angular';
 import {FormsModule} from '@angular/forms';
 import {ReadArticleComponent} from './read-article/read-article.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
+import {BlogLandingComponent} from './blog-landing/blog-landing.component';
+import {ArticleCardComponent} from './article-card/article-card.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import {SidebarComponent} from './sidebar/sidebar.component';
     AddArticleComponent,
     BlogBaseComponent,
     ReadArticleComponent,
-    SidebarComponent
+    SidebarComponent,
+    BlogLandingComponent,
+    ArticleCardComponent
   ],
   exports: [
     BlogBaseComponent
