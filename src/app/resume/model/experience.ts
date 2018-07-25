@@ -5,4 +5,5 @@ export class Experience {
   company: string;
   details: string;
   link: string;
+  image: string;
 }

@@ -7,4 +7,5 @@ export class Formation {
   details: string;
   result: string;
   link: string;
+  image: string;
 }
