@@ -2,7 +2,7 @@
   <div class="row blog-row">
     <app-sidebar [data]="resume"></app-sidebar>
     <div class="col s12 m12 l9 push-l3 resume">
-      <section id="#headlines">
+      <section id="#headlines" class="hide-on-med-and-down">
         <div class="center-xy center-align full-width">
           <h1>{{resume.job|uppercase}}</h1>
           <h2>{{resume.headline|uppercase}}</h2>
@@ -16,7 +16,7 @@
       </section>
       <section id="formation">
         <h2 class="center-align">FORMATION</h2>
-        <div class="full-width center-xy flex-around">
+        <div class="full-width center-xy flex-wrap-around">
           <app-resume-card *ngFor="let formation of resume.formations" [data]="formation"></app-resume-card>
         </div>
       </section>

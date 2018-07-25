@@ -2,6 +2,10 @@
   <img class="img-rounded" [src]="avatar_url">
   <div>
     <h1>{{data.name}}</h1>
+    <div class="show-on-medium-and-down hide-on-large-only">
+      <h1>{{data.job|uppercase}}</h1>
+      <h2>{{data.headline|uppercase}}</h2>
+    </div>
     <blockquote>
       {{data.bio}}
     </blockquote>
