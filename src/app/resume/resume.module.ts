@@ -4,6 +4,7 @@ import {ResumeBaseComponent} from './resume-base/resume-base.component';
 import {ResumeComponent} from './resume/resume.component';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
+import {ResumeCardComponent} from './resume-card/resume-card.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import {SharedModule} from '../shared/shared.module';
     RouterModule,
     SharedModule
   ],
-  declarations: [ResumeBaseComponent, ResumeComponent],
+  declarations: [ResumeBaseComponent, ResumeComponent, ResumeCardComponent],
   exports: [
     ResumeBaseComponent
   ]

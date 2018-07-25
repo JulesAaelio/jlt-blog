@@ -120,3 +120,13 @@ a {
 .full-width {
   width: 100%;
 }
+
+.card-title + .card-date {
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: center;
+}
