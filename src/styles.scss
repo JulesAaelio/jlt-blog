@@ -109,3 +109,14 @@ a {
   margin-top: 25px;
 
 }
+
+.center-xy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.full-width {
+  width: 100%;
+}

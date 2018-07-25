@@ -11,7 +11,10 @@ import {SharedModule} from '../shared/shared.module';
     RouterModule,
     SharedModule
   ],
-  declarations: [ResumeBaseComponent, ResumeComponent]
+  declarations: [ResumeBaseComponent, ResumeComponent],
+  exports: [
+    ResumeBaseComponent
+  ]
 })
 export class ResumeModule {
 }

@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
 import {RoutingModule} from './routing/routing.module';
 import {BlogModule} from './blog/blog.module';
+import {ResumeModule} from './resume/resume.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {BlogModule} from './blog/blog.module';
     HttpClientModule,
     AuthModule,
     RoutingModule,
-    BlogModule
+    BlogModule,
+    ResumeModule
   ],
   bootstrap: [AppComponent]
 })
