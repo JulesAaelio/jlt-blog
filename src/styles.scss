@@ -128,5 +128,34 @@ a {
 
 .flex-around {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.flex-wrap-around {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 1.2em;
+  //margin-right: 1rem;
+  margin-bottom: 1em;
+  padding: 0.75rem;
+  &.badge-default {
+    background-color: #333333;
+    color: white;
+    border-color: #333333;
+  }
+
+  &.badge-fw {
+    width: 42%;
+    text-align: center;
+  }
+
+  &.badge-rounded {
+    border-radius: 999px;
+    border: solid 1px;
+  }
 }

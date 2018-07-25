@@ -5,6 +5,7 @@ import {ResumeComponent} from './resume/resume.component';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {ResumeCardComponent} from './resume-card/resume-card.component';
+import {SkillBucketComponent} from './skill-bucket/skill-bucket.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import {ResumeCardComponent} from './resume-card/resume-card.component';
     RouterModule,
     SharedModule
   ],
-  declarations: [ResumeBaseComponent, ResumeComponent, ResumeCardComponent],
+  declarations: [ResumeBaseComponent, ResumeComponent, ResumeCardComponent, SkillBucketComponent],
   exports: [
     ResumeBaseComponent
   ]

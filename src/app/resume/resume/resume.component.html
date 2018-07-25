@@ -8,20 +8,21 @@
           <h2>{{resume.headline|uppercase}}</h2>
         </div>
       </section>
-      <section id="#experience">
+      <section id="experience">
         <h2 class="center-align">EXPERIENCE PROFESSIONNELLE</h2>
         <div class="full-width center-xy">
           <app-resume-card *ngFor="let experience of resume.experiences" [data]="experience"></app-resume-card>
         </div>
       </section>
-      <section id="#formation">
+      <section id="formation">
         <h2 class="center-align">FORMATION</h2>
         <div class="full-width center-xy">
           <app-resume-card *ngFor="let experience of resume.formations" [data]="experience"></app-resume-card>
         </div>
       </section>
-      <section id="#skills">
+      <section id="skills">
         <h2 class="center-align">COMPETENCES</h2>
+        <app-skill-bucket *ngFor="let group of skills" [group]="group"></app-skill-bucket>
       </section>
     </div>
   </div>
