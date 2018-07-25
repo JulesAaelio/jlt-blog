@@ -1,17 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Experience} from '../model/experience';
-import {Formation} from '../model/formation';
-import {environment} from '../../../environments/environment';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-resume-card',
   templateUrl: './resume-card.component.html',
-  styleUrls: ['./resume-card.component.css']
+  styleUrls: ['./resume-card.component.css'],
 })
 export class ResumeCardComponent implements OnInit {
 
   @Input() data;
-
+  @HostBinding('class') hostclass = 'col s12 m4';
   constructor() {
   }
 

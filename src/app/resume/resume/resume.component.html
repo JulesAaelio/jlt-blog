@@ -1,6 +1,6 @@
 <div>
   <div class="row blog-row">
-    <app-sidebar [data]="{}"></app-sidebar>
+    <app-sidebar [data]="resume"></app-sidebar>
     <div class="col s12 m12 l9 push-l3 resume">
       <section id="#headlines">
         <div class="center-xy center-align full-width">
@@ -16,13 +16,15 @@
       </section>
       <section id="formation">
         <h2 class="center-align">FORMATION</h2>
-        <div class="full-width center-xy">
-          <app-resume-card *ngFor="let experience of resume.formations" [data]="experience"></app-resume-card>
+        <div class="full-width center-xy flex-around">
+          <app-resume-card *ngFor="let formation of resume.formations" [data]="formation"></app-resume-card>
         </div>
       </section>
       <section id="skills">
         <h2 class="center-align">COMPETENCES</h2>
-        <app-skill-bucket *ngFor="let group of skills" [group]="group"></app-skill-bucket>
+        <div class="flex-wrap">
+          <app-skill-bucket *ngFor="let group of skills" [group]="group"></app-skill-bucket>
+        </div>
       </section>
     </div>
   </div>
