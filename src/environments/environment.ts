@@ -6,6 +6,8 @@ export const environment = {
   production: false,
   rest_end_point: 'http://api.blog.perso.local',
   auth_end_point: 'http://api.perso.local',
+  resume_rest_end_point: 'http://api.perso.local',
+  default_resume: 'FIRST',
   app_id: '3_2ckxcze1y134koso8owk84k00woc8gwc44ocwskko4o088ws00',
 };
 
