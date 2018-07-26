@@ -13,6 +13,8 @@ export class Resume {
   github: string;
   twitter: string;
   bio: string;
+  city: string;
+  document: string;
   experiences: Experience[];
   formations: Formation[];
 }

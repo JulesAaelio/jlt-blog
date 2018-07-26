@@ -18,6 +18,7 @@ export class ResumeComponent implements OnInit {
   currentSection;
   deltaSum = 0;
 
+
   constructor(private resumeService: ResumeService, private pageScroll: PageScrollService) {
   }
 
@@ -76,6 +77,19 @@ export class ResumeComponent implements OnInit {
     if (!this.currentSection) {
       this.currentSection = 0;
     }
+  }
 
+  scrollDown(event) {
+    event.preventDefault();
+    const pageScrollInstance = PageScrollInstance.newInstance({
+      document: document,
+      scrollTarget: '#experience',
+      pageScrollInterruptible: false,
+    });
+    this.pageScroll.start(pageScrollInstance);
+  }
+
+  getDocumentURL() {
+    return environment.resume_rest_end_point + '/' + this.resume.document;
   }
 }

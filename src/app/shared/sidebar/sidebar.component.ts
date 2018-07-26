@@ -10,6 +10,8 @@ export class SidebarComponent implements OnInit {
 
   avatar_url = environment.rest_end_point + '/public/avatar.png';
   @Input() data;
+  @Input() resumeMode = false;
+  displayPhoneNumber = false;
   constructor() { }
 
   ngOnInit() {

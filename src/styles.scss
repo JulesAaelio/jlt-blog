@@ -1,9 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~materialize-css/sass/components/color-variables";
+
+$jlt-grey: #333333;
+$grey: map-merge($grey, ("jlt": $jlt-grey));
+$shades: map_merge($shades, ("grey": $jlt-grey));
+$colors: map_merge($colors, ("grey": $grey));
+$colors: map_merge($colors, ("shades": $shades));
+@import "~materialize-css/sass/components/color-classes";
 @import "~materialize-css/sass/components/variables";
+
 @import "custom_grid";
 @import "~materialize-css/sass/components/global";
 @import "~materialize-css/sass/components/cards";
+@import "~materialize-css/sass/components/buttons";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 html, body {
@@ -42,6 +51,7 @@ a {
   blockquote {
     text-align: justify;
     font-size: 1.1em;
+
     //overflow-y: scroll;
   }
 
@@ -88,6 +98,7 @@ a {
 
     blockquote {
       border: none;
+      padding-left: 0;
     }
   }
 
@@ -149,6 +160,10 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .badge {
@@ -226,4 +241,22 @@ a {
   .resume-card .card {
     min-height: 375px;
   }
+}
+
+.resume-city {
+  margin-top: -1em;
+}
+
+.resume-phone-number {
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+  color: $jlt-grey;
+  font-size: 2em;
+  text-align: center;
+  width: 98%;
+  margin-right: 1em;
+  margin-left: 1em;
+  //padding: 0.5rem;
+  bottom: 130%;
 }
