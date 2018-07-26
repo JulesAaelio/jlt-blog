@@ -1,4 +1,5 @@
 import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-resume-card',
@@ -8,7 +9,7 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 export class ResumeCardComponent implements OnInit {
 
   @Input() data;
-  @HostBinding('class') hostclass = 'col s12 m4';
+  @HostBinding('class') hostclass = 'col s12 m4 resume-card';
   constructor() {
   }
 
@@ -16,8 +17,8 @@ export class ResumeCardComponent implements OnInit {
   }
 
   getIllustrationAddress() {
-    return this.data.image;
-    // return environment.resume_rest_end_point + this.data.image;
+    // return this.data.image;
+    return environment.resume_rest_end_point + '/' + this.data.image;
   }
 
 }

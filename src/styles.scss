@@ -90,6 +90,10 @@ a {
       border: none;
     }
   }
+
+  .navigation-arrow {
+    display: none;
+  }
 }
 
 @media #{$small-and-down} {
@@ -201,5 +205,25 @@ a {
     font-size: initial;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+}
+
+.card-title {
+  text-align: left;
+}
+
+.card-location {
+  margin-bottom: 1em;
+}
+
+@media #{$medium-only} {
+  .resume-card .card {
+    min-height: 385px;
+  }
+}
+
+@media #{$large-and-up} {
+  .resume-card .card {
+    min-height: 375px;
   }
 }

@@ -10,12 +10,12 @@
       &mdash;
       {{data.end_date | date:'MMM yyyy':'fr-fr' | uppercase}}
     </div>
-    <p>
+    <div class="card-location">
       <a href="{{data.website}}">
         <i class="fa "
            [class.fa-building]="data.company"
            [class.fa-school]="data.school"></i> - {{data.company || data.school}}</a>
-    </p>
+    </div>
     <p>
       {{data.details}} ...
     </p>

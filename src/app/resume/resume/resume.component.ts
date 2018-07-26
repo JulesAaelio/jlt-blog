@@ -29,7 +29,7 @@ export class ResumeComponent implements OnInit {
       this.skills = skills;
     });
 
-    this.sections = document.querySelectorAll('section');
+    this.sections = document.querySelectorAll('section, #sidebar');
     this.findCurrentSection();
     console.log('init');
   }
@@ -37,7 +37,7 @@ export class ResumeComponent implements OnInit {
   onScroll(event) {
     console.log(this.currentSection);
     this.deltaSum += event.deltaY;
-    if (Math.abs(this.deltaSum) >= 12) {
+    if (Math.abs(this.deltaSum) >= Math.abs(4 * event.deltaY) && window.innerWidth > 601) {
       let target = null;
       if (event.deltaY < 0 && this.currentSection > 0) {
         target = this.currentSection - 1;
