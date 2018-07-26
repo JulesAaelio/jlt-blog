@@ -11,13 +11,13 @@
       {{data.end_date | date:'MMM yyyy':'fr-fr' | uppercase}}
     </div>
     <div class="card-location">
-      <a href="{{data.website}}">
+      <a href="{{data.link}}">
         <i class="fa "
            [class.fa-building]="data.company"
            [class.fa-school]="data.school"></i> - {{data.company || data.school}}</a>
     </div>
-    <p>
-      {{data.details}} ...
+    <p [innerHtml]="data.details">
+      <!--{{data.details}} ...-->
     </p>
   </div>
 </div>
