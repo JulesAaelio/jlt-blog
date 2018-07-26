@@ -23,10 +23,10 @@
     <a class="fab fa-2x fa-linkedin" target="_blank" [href]="'https://fr.linkedin.com/in/'+data.linkedin"></a>
 
     <a *ngIf="!resumeMode" routerLink="resume" class="fas fa-2x fa-trophy" target="_blank"></a>
-    <a class="fas fa-2x fa-phone fa-flip-horizontal cursor-pointer" target="_blank"
+    <a *ngIf="resumeMode" class="fas fa-2x fa-phone fa-flip-horizontal cursor-pointer" target="_blank"
        (click)="displayPhoneNumber = !displayPhoneNumber"></a>
 
-    <a *ngIf="resumeMode" class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>
+    <a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>
     <div class="resume-phone-number" *ngIf="displayPhoneNumber && resumeMode">{{data.phone}}</div>
     <!--<a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>-->
   </div>
