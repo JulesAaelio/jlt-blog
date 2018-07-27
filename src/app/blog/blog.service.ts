@@ -50,4 +50,8 @@ export class BlogService {
     });
 
   }
+
+  getUserInformations() {
+    return this.http.get(environment.resume_rest_end_point + '/cvs/' + environment.default_resume);
+  }
 }
