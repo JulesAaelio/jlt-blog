@@ -25,7 +25,7 @@ export class ReadArticleComponent implements OnInit {
         this.meta.addTag({property: 'og:image', content: this.getIllustrationAddress()});
         this.meta.addTag({property: 'og:title', content: this.article.title});
         this.meta.addTag({property: 'og:type', content: 'blog'});
-        this.title.setTitle(this.article.title + this.title.getTitle());
+        this.title.setTitle(this.article.title + ' | ' + environment.base_title);
       });
     });
   }

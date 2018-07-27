@@ -9,6 +9,7 @@ export const environment = {
   resume_rest_end_point: 'http://api.perso.local',
   default_resume: 'FIRST',
   app_id: '3_2ckxcze1y134koso8owk84k00woc8gwc44ocwskko4o088ws00',
+  base_title: 'Jules LAURENT',
 };
 
 /*

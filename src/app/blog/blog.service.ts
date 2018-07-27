@@ -38,4 +38,16 @@ export class BlogService {
   getArticles() {
     return this.http.get<Article[]>(environment.rest_end_point + '/articles');
   }
+
+  postImage(blobInfo, success, failure) {
+    const formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+    console.log('caca');
+    this.http.post(environment.rest_end_point + '/articles/images', formData).subscribe(response => {
+      success(environment.rest_end_point + '/' + response['location']);
+    }, error => {
+      failure(error);
+    });
+
+  }
 }

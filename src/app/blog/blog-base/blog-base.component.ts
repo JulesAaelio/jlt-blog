@@ -7,6 +7,7 @@ import 'tinymce/plugins/paste';
 import 'tinymce/plugins/link';
 import 'tinymce/plugins/code';
 import 'tinymce/plugins/codesample';
+import 'tinymce/plugins/image';
 
 // prism imports :
 // Note: we could use babel plugin
