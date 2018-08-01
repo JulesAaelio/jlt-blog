@@ -28,7 +28,7 @@
     "ngx-page-scroll": "^5.0.0",
     "prismjs": "^1.15.0",
     "rxjs": "^6.0.0",
-    "tinymce": "^4.8.0",
+    "tinymce": "4.7.4",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

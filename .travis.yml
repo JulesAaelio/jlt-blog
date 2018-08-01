@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "node"
+branches:
+  only:
+    - master
+before_script: .travis/before_script.sh
+script:
+  - node set-env.ts
+  - npm run build -- --prod
+after_success: .travis/after_success.sh
