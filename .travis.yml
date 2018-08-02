@@ -1,11 +1,11 @@
-language: node_js
+language: node_js #
 node_js:
-  - "node"
+  - "node" #Use latest version of nodejs
 branches:
-  only:
+  only: # Auto-deploy for branch master only
     - master
-before_script: .travis/before_script.sh
+before_script: .travis/before_script.sh # Prepare the environment before running test and build.
 script:
   - node set-env.ts
   - npm run build -- --prod
-after_success: .travis/after_success.sh
+after_success: .travis/after_success.sh #Deploy after test and build success
