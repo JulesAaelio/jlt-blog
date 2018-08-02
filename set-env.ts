@@ -10,8 +10,10 @@ const env = {
   base_title: 'Jules LAURENT',
 };
 
-const toWrite = 'export const environment = ' + JSON.stringify(env, null, '\t') + ';';
+const toWrite = 'export const environment = ' + JSON.stringify(env, null, '  ').replace(/\"([^(\")"]+)\":/g, '$1:') + ';';
 
 writeFile('./src/environments/environment.prod.ts', toWrite, (err => {
-  console.log(err);
+  if (err) {
+    console.log(err);
+  }
 }));
