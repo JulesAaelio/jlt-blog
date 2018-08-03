@@ -9,4 +9,4 @@ script:
   - node set-env.ts
   - npm run build -- --prod
 after_success:
- - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./.travis/after_success.sh; fi #Deploy after test and build success
+ - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./.travis/after_success.sh; fi #Deploy after test and build success
