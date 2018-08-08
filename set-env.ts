@@ -1,11 +1,11 @@
 const writeFile = require('fs').writeFile;
 
 const env = {
-  production: false,
-  rest_end_point: 'http://api.blog.perso.local',
-  auth_end_point: 'http://api.perso.local',
-  resume_rest_end_point: 'http://api.perso.local',
-  default_resume: 'FIRST',
+  production: true,
+  rest_end_point: process.env.rest_end_point,
+  auth_end_point:  process.env.auth_end_point,
+  resume_rest_end_point: process.env.resume_rest_end_point,
+  default_resume: process.env.default_resume,
   app_id: process.env.app_id,
   base_title: 'Jules LAURENT',
 };
