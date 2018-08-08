@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {User} from './User';
 import {HttpClient} from '@angular/common/http';
-import {Observable, of } from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {environment} from '../../environments/environment';
 
 @Injectable({
@@ -9,7 +9,9 @@ import {environment} from '../../environments/environment';
 })
 export class OAuth2Service {
   user;
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 
   static splitFragment(fragment: string) {
     const unsplitedparams = fragment.split('&');
@@ -37,7 +39,7 @@ export class OAuth2Service {
     return window.localStorage.getItem('jl_token');
   }
 
-  login(fragment)  {
+  login(fragment) {
     const params = OAuth2Service.splitFragment(fragment);
     const expdate = new Date();
     if (params['access_token'] !== undefined && params['expires_in'] !== undefined) {
@@ -72,10 +74,7 @@ export class OAuth2Service {
     if (this.user) {
       return of(this.user);
     } else {
-        this.http.get<User>(environment.rest_end_point + '/user/me').subscribe(r => {
-          this.user = r;
-          return this.user;
-        });
+      return this.http.get<User>(environment.rest_end_point + '/user/me');
     }
   }
 }

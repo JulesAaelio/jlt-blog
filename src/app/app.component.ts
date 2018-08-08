@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {OAuth2Service} from './auth/oauth2.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +6,12 @@ import {OAuth2Service} from './auth/oauth2.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = '- Jules LAURENT';
 
 
-  constructor(private as: OAuth2Service) {
-
+  constructor() {
   }
 
   ngOnInit(): void {
-    // OAuth2Service.initLogin('/');
   }
 }

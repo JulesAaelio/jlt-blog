@@ -1,0 +1,33 @@
+<div class="sidebar col s12 m12 l3" id="sidebar">
+  <img class="img-rounded" [src]="avatar_url">
+  <div>
+    <h1>{{data.name}}</h1>
+    <div class="center-align resume-city"><i class="fa fa-home"></i> {{data.city}}</div>
+    <div class="show-on-medium-and-down hide-on-large-only">
+      <h1>{{data.job|uppercase}}</h1>
+      <h2>{{data.headline|uppercase}}</h2>
+    </div>
+
+
+    <blockquote>
+      {{data.bio}}
+    </blockquote>
+    <div class="center-align">
+      <a *ngIf="resumeMode" [href]="" target="_blank" class="btn btn-large white grey-text hide-on-large-only "><i
+        class="fa fa-download"></i> TELECHARGER UN CV</a>
+    </div>
+  </div>
+  <div class="networks">
+    <a class="fab fa-2x fa-github" target="_blank" [href]="'https://github.com/'+data.github"></a>
+    <a class="fab fa-2x fa-twitter" target="_blank" [href]="'https://twitter.com/'+data.twitter"></a>
+    <a class="fab fa-2x fa-linkedin" target="_blank" [href]="'https://fr.linkedin.com/in/'+data.linkedin"></a>
+
+    <a *ngIf="!resumeMode" routerLink="resume" class="fas fa-2x fa-trophy" target="_blank"></a>
+    <a *ngIf="resumeMode" class="fas fa-2x fa-phone fa-flip-horizontal cursor-pointer" target="_blank"
+       (click)="displayPhoneNumber = !displayPhoneNumber"></a>
+
+    <a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>
+    <div class="resume-phone-number" *ngIf="displayPhoneNumber && resumeMode">{{data.phone}}</div>
+    <!--<a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>-->
+  </div>
+</div>
