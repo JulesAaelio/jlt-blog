@@ -260,3 +260,18 @@ a {
   //padding: 0.5rem;
   bottom: 130%;
 }
+
+.article-card {
+  .card-image {
+    max-height: 199px;
+  }
+}
+
+@media #{$medium-only} {
+  .article-card {
+    .card-image {
+      max-height: 130px;
+    }
+  }
+
+}
