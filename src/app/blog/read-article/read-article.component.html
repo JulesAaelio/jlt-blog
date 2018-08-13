@@ -1,6 +1,7 @@
 <img [src]="getIllustrationAddress()" class="article-illustration"/>
 <a routerLink="/"><i class="fas fa-arrow-left"></i>Retour à la liste des articles</a>
 <h1>{{article.title}}</h1>
+<span class="article-date">{{article.updatedAt | date:'d/MM/yyyy'}}</span>
 <div [innerHtml]="article.content">
 
 </div>

@@ -44,7 +44,7 @@ export class AddArticleComponent implements OnInit {
         let promise;
         const content = this.editor.getContent();
         const plainContent = this.editor.getContent({format: 'text'});
-        this.article.sample = plainContent.slice(0, 250);
+        this.article.sample = plainContent.slice(0, 245);
         if (this.article.id) {
           promise = this.blogService.putArticle(this.article.id, this.article.title, content, this.article.sample);
         } else {
