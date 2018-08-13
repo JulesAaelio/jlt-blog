@@ -36,19 +36,7 @@ declare var Prism: any;
 export class BlogBaseComponent implements OnInit, AfterViewChecked {
 
   isLanding = false;
-  sidebarData;
-  // = {
-  //   github: 'JulesAaelio',
-  //   website: 'http://juleslaurent.fr',
-  //   linkedin: 'jules-laurent',
-  //   mail: 'jules.laurent@ynov.com',
-  //   twitter: 'julesaaelio',
-  //   name: 'Jules LAURENT',
-  //   bio: ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard' +
-  //   'dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled',
-  //   city: 'LYON'
-  // };
-
+  sidebarData = {};
   constructor(private router: Router, private blogService: BlogService) {
     this.isLanding = (this.router.url === '/');
   }
