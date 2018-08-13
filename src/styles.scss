@@ -260,3 +260,34 @@ a {
   //padding: 0.5rem;
   bottom: 130%;
 }
+
+.article-card {
+  .card-image {
+    max-height: 199px;
+  }
+}
+
+@media #{$medium-only} {
+  .article-card {
+    .card-image {
+      max-height: 130px;
+    }
+  }
+
+}
+
+.article-date {
+  display: block;
+  margin-top: -15px;
+}
+
+.article-content {
+  a {
+    font-size: 1.05em;
+    text-decoration: underline #333333;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

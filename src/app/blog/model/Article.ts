@@ -4,4 +4,5 @@ export class Article {
   content: string;
   illustration: string;
   sample: string;
+  updatedAt: string;
 }

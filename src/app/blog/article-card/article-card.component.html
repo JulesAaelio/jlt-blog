@@ -1,12 +1,12 @@
-<div [routerLink]="'/articles/'+ article.id" class="col s12 m4 cursor-pointer">
+<div [routerLink]="'/articles/'+ article.id" class="col s12 m4 l4 cursor-pointer article-card">
   <div class="card">
     <div class="card-image">
-      <img [src]="getIllustrationAddress()">
+      <img class="card-image" [src]="getIllustrationAddress()">
 
     </div>
     <div class="card-content">
       <span class="card-title">{{article.title}}</span>
-      <p>{{article.sample}} ...</p>
+      <p><span>{{article.updatedAt| date:'dd/MM/yyyy'}}</span> - {{article.sample}} ...</p>
     </div>
   </div>
 </div>
