@@ -280,3 +280,10 @@ a {
   display: block;
   margin-top: -15px;
 }
+
+.article-content {
+  a {
+    font-size: 1.05em;
+    text-decoration: underline #333333;
+  }
+}
