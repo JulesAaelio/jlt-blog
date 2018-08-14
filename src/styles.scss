@@ -20,6 +20,8 @@ html, body {
   padding: 0;
 }
 
+//TYPOS
+
 h1, h2, h3, h4, p, div, section {
   font-family: 'Roboto', sans-serif;
 }
@@ -28,13 +30,15 @@ a {
   color: black;
 }
 
+//SIDEBAR
+
 .sidebar {
   position: fixed;
   height: 100%;
   min-height: 100%;
   left: 0;
 
-  background-color: #333333;
+  background-color: $jlt-grey;
   color: white;
 
   display: flex;
@@ -51,8 +55,6 @@ a {
   blockquote {
     text-align: justify;
     font-size: 1.1em;
-
-    //overflow-y: scroll;
   }
 
   .networks {
@@ -82,14 +84,10 @@ a {
 
 }
 
+//BLOG
+
 .blog-row {
   display: flex;
-}
-
-
-.img-rounded {
-  border: solid 2px white;
-  border-radius: 50%;
 }
 
 @media #{$medium-and-down} {
@@ -130,31 +128,10 @@ a {
   }
 }
 
-.article-illustration {
-  width: 100%;
-  height: auto;
-}
+//CARDS
 
-.card-content {
-  text-align: justify;
-}
-
-.form-control {
-  width: 100%;
-  margin-bottom: 25px;
-  margin-top: 25px;
-
-}
-
-.center-xy {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.full-width {
-  width: 100%;
+.card-title {
+  text-align: left;
 }
 
 .card-title + .card-date {
@@ -162,49 +139,44 @@ a {
   margin-bottom: 8px;
 }
 
-.flex-around {
-  display: flex;
-  justify-content: space-around;
-}
-
-.flex-wrap-around {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 1.2em;
-  //margin-right: 1rem;
+.card-location {
   margin-bottom: 1em;
-  padding: 0.75rem;
-  //min-width: 130px;
-  &.badge-default {
-    background-color: #333333;
-    color: white;
-    border-color: #333333;
-  }
+}
 
-  &.badge-fw {
-    width: 42%;
-    text-align: center;
-  }
+.card-content {
+  text-align: justify;
+}
 
-  &.badge-rounded {
-    border-radius: 999px;
-    border: solid 1px;
+//RESUME
+
+@media #{$medium-only} {
+  .resume-card .card {
+    min-height: 385px;
   }
+}
+
+@media #{$large-and-up} {
+  .resume-card .card {
+    min-height: 375px;
+  }
+}
+
+.resume-city {
+  margin-top: -1em;
+}
+
+.resume-phone-number {
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+  color: $jlt-grey;
+  font-size: 2em;
+  text-align: center;
+  width: 98%;
+  margin-right: 1em;
+  margin-left: 1em;
+  //padding: 0.5rem;
+  bottom: 130%;
 }
 
 .col.skill-bucket {
@@ -240,42 +212,27 @@ a {
   }
 }
 
-.card-title {
-  text-align: left;
+// ARTICLES
+
+.article-date {
+  display: block;
+  margin-top: -15px;
 }
 
-.card-location {
-  margin-bottom: 1em;
+.article-illustration {
+  width: 100%;
+  height: auto;
 }
 
-@media #{$medium-only} {
-  .resume-card .card {
-    min-height: 385px;
+.article-content {
+  a {
+    font-size: 1.05em;
+    text-decoration: underline $jlt-grey;
   }
-}
-
-@media #{$large-and-up} {
-  .resume-card .card {
-    min-height: 375px;
+  img {
+    max-width: 100%;
+    height: auto;
   }
-}
-
-.resume-city {
-  margin-top: -1em;
-}
-
-.resume-phone-number {
-  position: absolute;
-  background-color: white;
-  border-radius: 2px;
-  color: $jlt-grey;
-  font-size: 2em;
-  text-align: center;
-  width: 98%;
-  margin-right: 1em;
-  margin-left: 1em;
-  //padding: 0.5rem;
-  bottom: 130%;
 }
 
 @media #{$large-and-up} {
@@ -287,28 +244,71 @@ a {
   }
 }
 
+// UTILS
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
 
-@media #{$medium-only} {
-  .article-card {
-    .card-image {
-      max-height: 195px;
-    }
-  }
+.flex-wrap-around {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.center-xy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.img-rounded {
+  border: solid 2px white;
+  border-radius: 50%;
+}
+
+.form-control {
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 25px;
 
 }
 
-.article-date {
-  display: block;
-  margin-top: -15px;
-}
-
-.article-content {
-  a {
-    font-size: 1.05em;
-    text-decoration: underline #333333;
+.badge {
+  display: inline-block;
+  font-size: 1.2em;
+  //margin-right: 1rem;
+  margin-bottom: 1em;
+  padding: 0.75rem;
+  //min-width: 130px;
+  &.badge-default {
+    background-color: $jlt-grey;
+    color: white;
+    border-color: $jlt-grey;
   }
-  img {
-    max-width: 100%;
-    height: auto;
+
+  &.badge-fw {
+    width: 42%;
+    text-align: center;
+  }
+
+  &.badge-rounded {
+    border-radius: 999px;
+    border: solid 1px;
   }
 }
