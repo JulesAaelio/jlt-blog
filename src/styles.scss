@@ -70,6 +70,23 @@ a {
   }
 }
 
+.sidebar-placeholder {
+  display: none;
+  visibility: hidden;
+}
+
+@media #{$large-and-up} {
+  .sidebar, .sidebar-placeholder {
+    min-width: 443px;
+  }
+
+}
+
+.blog-row {
+  display: flex;
+}
+
+
 .img-rounded {
   border: solid 2px white;
   border-radius: 50%;
@@ -261,16 +278,20 @@ a {
   bottom: 130%;
 }
 
-.article-card {
-  .card-image {
-    max-height: 199px;
+@media #{$large-and-up} {
+  .article-card {
+    min-width: 431px;
+    .card-image {
+      max-height: 199px;
+    }
   }
 }
+
 
 @media #{$medium-only} {
   .article-card {
     .card-image {
-      max-height: 130px;
+      max-height: 195px;
     }
   }
 
