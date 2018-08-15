@@ -9,7 +9,7 @@ import {environment} from '../../../environments/environment';
 export class ResumeCardComponent implements OnInit {
 
   @Input() data;
-  @HostBinding('class') hostclass = 'col s12 m4 resume-card';
+  @HostBinding('class') hostclass = 'col s12 m6 l4 resume-card';
   constructor() {
   }
 
