@@ -236,7 +236,7 @@ a {
 }
 
 @media #{$large-and-up} {
-  .article-card {
+  .article-card, .resume-card {
     min-width: 431px;
     .card-image {
       max-height: 199px;
