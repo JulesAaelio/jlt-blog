@@ -36,28 +36,28 @@ export class ResumeComponent implements OnInit {
   }
 
   onScroll(event) {
-    console.log(this.currentSection);
-    this.deltaSum += event.deltaY;
-    if (Math.abs(this.deltaSum) >= Math.abs(4 * event.deltaY) && window.innerWidth > 601) {
-      let target = null;
-      if (event.deltaY < 0 && this.currentSection > 0) {
-        target = this.currentSection - 1;
-      } else if (event.deltaY > 0 && this.currentSection < this.sections.length) {
-        target = this.currentSection + 1;
-      }
-      if (target !== undefined && target !== null) {
-
-        const pageScrollInstance = PageScrollInstance.newInstance({
-          document: document,
-          scrollTarget: '#' + this.sections[target].id,
-          pageScrollInterruptible: false,
-        });
-        this.pageScroll.start(pageScrollInstance);
-        this.currentSection = target;
-        this.deltaSum = 0;
-      }
-
-    }
+    // console.log(this.currentSection);
+    // this.deltaSum += event.deltaY;
+    // if (Math.abs(this.deltaSum) >= Math.abs(4 * event.deltaY) && window.innerWidth > 601) {
+    //   let target = null;
+    //   if (event.deltaY < 0 && this.currentSection > 0) {
+    //     target = this.currentSection - 1;
+    //   } else if (event.deltaY > 0 && this.currentSection < this.sections.length) {
+    //     target = this.currentSection + 1;
+    //   }
+    //   if (target !== undefined && target !== null) {
+    //
+    //     const pageScrollInstance = PageScrollInstance.newInstance({
+    //       document: document,
+    //       scrollTarget: '#' + this.sections[target].id,
+    //       pageScrollInterruptible: false,
+    //     });
+    //     this.pageScroll.start(pageScrollInstance);
+    //     this.currentSection = target;
+    //     this.deltaSum = 0;
+    //   }
+    //
+    // }
   }
 
   findCurrentSection() {
