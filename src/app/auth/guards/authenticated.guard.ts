@@ -17,7 +17,7 @@ export class AuthenticatedGuard implements CanActivate {
     if (this.as.isAuthenticated()) {
       return true;
     } else {
-      OAuth2Service.initLogin(state.url);
+      this.as.initLogin(state.url);
       return false;
     }
   }

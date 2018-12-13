@@ -23,7 +23,7 @@ export class OAuth2Service {
     return params;
   }
 
-  static initLogin(redirectTo: string) {
+  initLogin(redirectTo: string) {
     window.localStorage.setItem('redirectTo', redirectTo);
     window.location.href = environment.auth_end_point + '/oauth/v2/auth' +
       '?response_type=token' +
