@@ -77,6 +77,16 @@ a {
   visibility: hidden;
 }
 
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+
+  * {
+    margin: 2px;
+  }
+}
+
 @media #{$large-and-up} {
   .sidebar, .sidebar-placeholder {
     min-width: 443px;
