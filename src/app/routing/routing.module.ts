@@ -10,9 +10,10 @@ import {AuthenticatedGuard} from '../auth/guards/authenticated.guard';
 import {ResumeBaseComponent} from '../resume/resume-base/resume-base.component';
 
 export const routes: Routes = [
+  {path: '', redirectTo: 'resume', pathMatch: 'full'},
   {path: 'auth', component: AuthBaseComponent, children: authRoutes},
-  {path: '', component: BlogBaseComponent, children: blogRoutes},
-  {path: 'admin', component: BlogBaseComponent, children: blogAdminRoutes, canActivate: [AuthenticatedGuard]},
+  {path: 'blog', component: BlogBaseComponent, children: blogRoutes},
+  {path: 'blog/admin', component: BlogBaseComponent, children: blogAdminRoutes, canActivate: [AuthenticatedGuard]},
   {path: 'resume', component: ResumeBaseComponent, children: resumeRoutes},
 ];
 
