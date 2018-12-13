@@ -38,7 +38,8 @@ export class BlogBaseComponent implements OnInit, AfterViewChecked {
   isLanding = false;
   sidebarData = {};
   constructor(private router: Router, private blogService: BlogService) {
-    this.isLanding = (this.router.url === '/');
+    this.isLanding = (this.router.url === '/blog');
+    console.log(this.isLanding);
   }
 
   ngOnInit() {
