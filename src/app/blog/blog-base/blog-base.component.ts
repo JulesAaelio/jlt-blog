@@ -1,13 +1,13 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
 
-// tinymce imports
-import 'tinymce';
-import 'tinymce/themes/modern/theme';
-import 'tinymce/plugins/paste';
-import 'tinymce/plugins/link';
-import 'tinymce/plugins/code';
-import 'tinymce/plugins/codesample';
-import 'tinymce/plugins/image';
+// // tinymce imports
+// import 'tinymce';
+// import 'tinymce/themes/modern/theme';
+// import 'tinymce/plugins/paste';
+// import 'tinymce/plugins/link';
+// import 'tinymce/plugins/code';
+// import 'tinymce/plugins/codesample';
+// import 'tinymce/plugins/image';
 
 // prism imports :
 // Note: we could use babel plugin
