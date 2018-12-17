@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -35,7 +36,10 @@ module.exports = {
       /(.+)?express(\\|\/)(.+)?/,
       path.join(__dirname, 'src'),
       {}
-    )
+    ),
+    new CopyWebpackPlugin([
+      { from: 'docker-compose.prod.yml', to: 'docker-compose.yml' },
+    ], {})
   ]
 };
     
