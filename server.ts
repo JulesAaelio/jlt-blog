@@ -30,14 +30,14 @@ app.engine('html', ngExpressEngine({
 }));
 
 app.set('view engine', 'html');
-app.set('views', './dist/browser');
+app.set('views', './browser');
 
 app.get('/redirect/**', (req, res) => {
   const location = req.url.substring(10);
   res.redirect(301, location);
 });
 
-app.get('*.*', express.static('./dist/browser', {
+app.get('*.*', express.static('./browser', {
   maxAge: '1y'
 }));
 
@@ -50,4 +50,10 @@ app.get('/*', (req, res) => {
       res.send(err);
     }
   });
+});
+
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  console.log('Listening on: http://0.0.0.0:' + port);
 });
