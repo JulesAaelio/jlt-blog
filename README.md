@@ -4,6 +4,12 @@
 This is my personal blog and online resume source code.
 
 
+## Production server
+```
+npm run build:prod
+npm server
+```
+
 # Usage 
 
 ```bash
