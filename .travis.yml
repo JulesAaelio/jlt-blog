@@ -12,4 +12,4 @@ before_script: ".travis/before_script.sh"
 script:
 - npm run build -- --prod
 after_success:
-- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./.travis/after_success.sh; fi
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then ./.travis/after_success.sh; fi
