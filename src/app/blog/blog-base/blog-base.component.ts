@@ -1,4 +1,4 @@
-import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 
 // // tinymce imports
 // import 'tinymce';
@@ -24,6 +24,8 @@ import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-php';
 import {Router} from '@angular/router';
 import {BlogService} from '../blog.service';
+import {WINDOW} from '@ng-toolkit/universal';
+import {isPlatformBrowser} from '@angular/common';
 
 declare var Prism: any;
 
@@ -37,7 +39,7 @@ export class BlogBaseComponent implements OnInit, AfterViewChecked {
 
   isLanding = false;
   sidebarData = {};
-  constructor(private router: Router, private blogService: BlogService) {
+  constructor(private router: Router, private blogService: BlogService,@Inject(PLATFORM_ID) private platformId: string) {
     this.isLanding = (this.router.url === '/blog');
     console.log(this.isLanding);
   }
@@ -49,7 +51,9 @@ export class BlogBaseComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    Prism.highlightAll();
+    if (isPlatformBrowser(this.platformId)) {
+      Prism.highlightAll();
+    }
   }
 
 
