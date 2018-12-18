@@ -10,6 +10,6 @@ before_install:
   -in environment.prod.ts.enc -out src/environments/environment.prod.ts -d
 before_script: ".travis/before_script.sh"
 script:
-- npm run build -- --prod
+- npm run build:prod
 after_success:
 - if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then ./.travis/after_success.sh; fi
