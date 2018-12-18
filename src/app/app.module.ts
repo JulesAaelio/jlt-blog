@@ -1,6 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import {NgtUniversalModule} from '@ng-toolkit/universal';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './auth/auth.module';
 import {RoutingModule} from './routing/routing.module';
@@ -12,13 +13,14 @@ import {ResumeModule} from './resume/resume.module';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    NgtUniversalModule,
     HttpClientModule,
     AuthModule,
     RoutingModule,
     BlogModule,
     ResumeModule
   ],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

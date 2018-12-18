@@ -1,4 +1,5 @@
-import {Injectable} from '@angular/core';
+import { LOCAL_STORAGE , WINDOW} from '@ng-toolkit/universal';
+import {Inject, Injectable} from '@angular/core';
 import {User} from './User';
 import {HttpClient} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
@@ -10,7 +11,7 @@ import {environment} from '../../environments/environment';
 export class OAuth2Service {
   user;
 
-  constructor(private http: HttpClient) {
+  constructor(@Inject(WINDOW) private window: Window, @Inject(LOCAL_STORAGE) private localStorage: any, private http: HttpClient) {
   }
 
   static splitFragment(fragment: string) {
@@ -23,20 +24,20 @@ export class OAuth2Service {
     return params;
   }
 
-  static initLogin(redirectTo: string) {
-    window.localStorage.setItem('redirectTo', redirectTo);
-    window.location.href = environment.auth_end_point + '/oauth/v2/auth' +
+  initLogin(redirectTo: string) {
+    this.localStorage.setItem('redirectTo', redirectTo);
+    this.window.location.href = environment.auth_end_point + '/oauth/v2/auth' +
       '?response_type=token' +
       '&client_id=' + environment.app_id +
-      '&redirect_uri=' + window.location.origin + '/auth';
+      '&redirect_uri=' + this.window.location.origin + '/auth';
   }
 
   getToken() {
-    const expddate = window.localStorage.getItem('jl_exp_date');
+    const expddate = this.localStorage.getItem('jl_exp_date');
     if (expddate && new Date(expddate).getTime() < new Date().getTime()) {
       this.logoff();
     }
-    return window.localStorage.getItem('jl_token');
+    return this.localStorage.getItem('jl_token');
   }
 
   login(fragment) {
@@ -44,10 +45,10 @@ export class OAuth2Service {
     const expdate = new Date();
     if (params['access_token'] !== undefined && params['expires_in'] !== undefined) {
       expdate.setSeconds(expdate.getSeconds() + Number.parseInt(params['expires_in']));
-      window.localStorage.setItem('jl_token', params['access_token']);
-      window.localStorage.setItem('jl_exp_date', expdate.toISOString());
+      this.localStorage.setItem('jl_token', params['access_token']);
+      this.localStorage.setItem('jl_exp_date', expdate.toISOString());
     }
-    let redirectTo = window.localStorage.getItem('redirectTo');
+    let redirectTo = this.localStorage.getItem('redirectTo');
 
     if (!redirectTo) {
       redirectTo = '/';
@@ -55,14 +56,14 @@ export class OAuth2Service {
     this.getUser().subscribe((r) => {
       this.user = r;
       // not using router.navigate to force reload.
-      window.location.assign(window.location.origin + redirectTo);
+      this.window.location.assign(this.window.location.origin + redirectTo);
     });
   }
 
   logoff() {
-    localStorage.removeItem('jl_token');
-    localStorage.removeItem('jl_exp_date');
-    localStorage.removeItem('redirectTo');
+    this.localStorage.removeItem('jl_token');
+    this.localStorage.removeItem('jl_exp_date');
+    this.localStorage.removeItem('redirectTo');
     this.user = null;
   }
 

@@ -10,7 +10,7 @@ import {OAuth2Service} from '../oauth2.service';
 
 @Injectable()
 export class UnauthorizedInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {
+  constructor(private router: Router, private as: OAuth2Service) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -21,7 +21,7 @@ export class UnauthorizedInterceptor implements HttpInterceptor {
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
-          OAuth2Service.initLogin(this.router.routerState.snapshot.url);
+          this.as.initLogin(this.router.routerState.snapshot.url);
         }
       }
     }));

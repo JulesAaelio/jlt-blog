@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { WINDOW } from '@ng-toolkit/universal';
+import {Component, OnInit, Inject} from '@angular/core';
 import {ResumeService} from '../resume.service';
 import {environment} from '../../../environments/environment';
 import {Resume} from '../model/resume';
@@ -19,7 +20,7 @@ export class ResumeComponent implements OnInit {
   deltaSum = 0;
 
 
-  constructor(private resumeService: ResumeService, private pageScroll: PageScrollService) {
+  constructor(@Inject(WINDOW) private window: Window, private resumeService: ResumeService, private pageScroll: PageScrollService) {
   }
 
   ngOnInit() {
@@ -68,7 +69,7 @@ export class ResumeComponent implements OnInit {
           this.currentSection = i;
         }
       } else {
-        if (o.offsetTop === window.pageYOffset) {
+        if (o.offsetTop === this.window.pageYOffset) {
           this.currentSection = i;
         }
       }
