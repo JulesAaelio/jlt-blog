@@ -29,6 +29,10 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
     this.resumeService.getResume(environment.default_resume).subscribe(resume => {
       this.resume = resume;
+      this.resume.experiences = this.resume.experiences.sort((a, b) => {
+        if (new Date(a.begin_date) === new Date(b.begin_date)) { return 0; }
+        return new Date(a.begin_date) < new Date(b.begin_date) ? 1 : -1;
+      });
 
       this.meta.addTag({name: 'author', content: this.resume.name});
       this.meta.addTag({property: 'og:image', content: this.getIllustrationAddress()});
