@@ -6,6 +6,7 @@ import {Resume} from '../model/resume';
 import {SkillGroup} from '../model/skill-group';
 import {PageScrollInstance, PageScrollService} from 'ngx-page-scroll';
 import {isPlatformBrowser} from '@angular/common';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume',
@@ -22,12 +23,19 @@ export class ResumeComponent implements OnInit {
 
 
   constructor(@Inject(WINDOW) private window: Window, private resumeService: ResumeService, private pageScroll: PageScrollService,
-              @Inject(PLATFORM_ID) private platformId: string) {
+              @Inject(PLATFORM_ID) private platformId: string, private meta: Meta, private title: Title) {
   }
 
   ngOnInit() {
     this.resumeService.getResume(environment.default_resume).subscribe(resume => {
       this.resume = resume;
+
+      this.meta.addTag({name: 'author', content: this.resume.name});
+      this.meta.addTag({property: 'og:image', content: this.getIllustrationAddress()});
+      this.meta.addTag({property: 'og:title', content: `${this.resume.name} | ${this.resume.job}`});
+      this.meta.addTag({property: 'og:type', content: 'website'});
+      this.title.setTitle(`${this.resume.name} | ${this.resume.job}`);
+      this.meta.addTag({property: 'og:description', content: `${this.resume.bio}`});
     });
     this.resumeService.getSkills(environment.default_resume).subscribe(skills => {
       this.skills = skills;
@@ -95,5 +103,9 @@ export class ResumeComponent implements OnInit {
 
   getDocumentURL() {
     return environment.resume_rest_end_point + '/' + this.resume.document;
+  }
+
+  getIllustrationAddress() {
+    return environment.resume_rest_end_point + '/image/banner.png';
   }
 }
