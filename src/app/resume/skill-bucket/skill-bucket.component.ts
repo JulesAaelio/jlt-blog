@@ -9,7 +9,7 @@ import {SkillGroup} from '../model/skill-group';
 export class SkillBucketComponent implements OnInit {
 
   @Input() group: SkillGroup;
-  @HostBinding('class') hostclass = 'col s12 m6 l3 skill-bucket';
+  @HostBinding('class') hostclass = 'col s12 m6 l4 skill-bucket';
 
   constructor() {
   }
