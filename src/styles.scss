@@ -237,7 +237,7 @@ a {
   }
 
   .badge {
-    font-size: initial;
+    font-size: initial !important;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
   }
@@ -344,7 +344,7 @@ a {
   }
 }
 
-@media #{$medium-and-down} {
+@media #{$small-and-down} {
   .card-image {
     display: none;
   }
@@ -352,4 +352,14 @@ a {
   h2 {
     font-size: 1.5em !important;
   }
+
+  .card-body {
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+  }
+
+}
+
+.card-body {
+  padding: 20px;
 }
