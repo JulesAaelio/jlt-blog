@@ -1,0 +1,21 @@
+:host  {
+  display: flex;
+}
+
+.card {
+  width: 100%;
+}
+
+
+.card-image {
+  padding-top: 39.69%;
+  position: relative;
+}
+
+.card-image img {
+  position: absolute;
+}
+
+/*.card {*/
+/*  width: 100%;*/
+/*}*/

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {Article} from '../model/Article';
 import {environment} from '../../../environments/environment';
 
@@ -10,6 +10,8 @@ import {environment} from '../../../environments/environment';
 export class ArticleCardComponent implements OnInit {
 
   @Input() article: Article = new Article();
+  @HostBinding('class') hostclass = 'col s12 m6 l4';
+
 
   constructor() {
   }
