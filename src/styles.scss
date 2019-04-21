@@ -138,12 +138,16 @@ a {
   h1 {
     font-size: 1.5em;
   }
+  .headline {
+    font-size: 1.2em !important;
+
+  }
   h2 {
     font-size: 1.2em;
   }
 
   .sidebar-avatar {
-    max-width: 150px;
+    max-width: 200px;
     height: auto;
   }
 
@@ -217,6 +221,7 @@ a {
   .resume {
     section {
       height: auto !important;
+      min-height: 0 !important;
     }
   }
 
@@ -336,5 +341,15 @@ a {
   &.badge-rounded {
     border-radius: 999px;
     border: solid 1px;
+  }
+}
+
+@media #{$medium-and-down} {
+  .card-image {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.5em !important;
   }
 }
