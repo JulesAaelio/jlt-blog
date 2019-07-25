@@ -1,0 +1,20 @@
+.navigation-arrow {
+  position: absolute;
+  right: 0.5rem;
+  opacity: 0.2;
+  cursor: pointer;
+  width: 8em;
+  text-align: center;
+}
+
+.navigation-arrow:hover {
+  opacity: 1;
+}
+
+.navigation-arrow.navigation-arrow-up {
+  top: 0.5rem;
+}
+
+.navigation-arrow.navigation-arrow-down, .navigation-arrow.navigation-arrow-top {
+  bottom: 0.5rem;
+}
