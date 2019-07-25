@@ -14,4 +14,13 @@ ssh-add ~/.ssh/id_rsa
 
 # fetch the build subtree.
 git remote add deploy $deploy_uri
-git subtree add --prefix $deploy_prefix deploy master
+# Check if remote exist.
+git ls-remote --exit-code deploy master
+exit_code=$?
+if [ ${exit_code} -ne 2 ]; then
+ # If remote exist fetch it.
+ git subtree add --prefix $deploy_prefix deploy master
+else
+ echo "Deployment repository is empty"
+fi
+
