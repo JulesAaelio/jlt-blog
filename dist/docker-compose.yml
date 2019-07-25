@@ -1,0 +1,8 @@
+version: '3'
+services:
+  jlt-blog:
+    build: .
+    ports:
+     - "4200:4200"
+    volumes:
+      - .:/data/ngapp

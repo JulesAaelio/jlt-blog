@@ -1,0 +1,14 @@
+<div class="card skill-bucket">
+<!--    <div class="card-content">-->
+<!--  <div class="card-title">{{group.label}}</div>-->
+<!---->
+<!--      </div>-->
+    <div class="card-content">
+      <div class="card-title">{{group.label}}</div>
+
+      <div class="card-body flex-wrap-around">
+        <span class="badge  badge-default badge-fw badge-rounded "
+              *ngFor="let skill of group.skills">{{skill.label}}</span>
+      </div>
+    </div>
+  </div>
