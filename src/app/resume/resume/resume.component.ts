@@ -4,9 +4,10 @@ import {ResumeService} from '../resume.service';
 import {environment} from '../../../environments/environment';
 import {Resume} from '../model/resume';
 import {SkillGroup} from '../model/skill-group';
-import {PageScrollInstance, PageScrollService} from 'ngx-page-scroll';
-import {isPlatformBrowser} from '@angular/common';
+// import {PageScrollInstance, PageScrollService} from 'ngx-page-scroll';
+// import {isPlatformBrowser} from '@angular/common';
 import {Meta, Title} from '@angular/platform-browser';
+import {PageScrollInstance, PageScrollService} from 'ngx-page-scroll-core';
 
 @Component({
   selector: 'app-resume',
@@ -45,10 +46,10 @@ export class ResumeComponent implements OnInit {
       this.skills = skills;
     });
 
-    if(isPlatformBrowser(this.platformId)) {
-      this.sections = this.window.document.querySelectorAll('section, #sidebar');
-      this.findCurrentSection();
-    }
+    // if(isPlatformBrowser(this.platformId)) {
+    //   this.sections = this.window.document.querySelectorAll('section, #sidebar');
+    //   this.findCurrentSection();
+    // }
   }
 
   onScroll(event) {
@@ -97,12 +98,12 @@ export class ResumeComponent implements OnInit {
 
   scrollDown(event) {
     event.preventDefault();
-      const pageScrollInstance = PageScrollInstance.newInstance({
-        document: this.window.document,
-        scrollTarget: '#experience',
-        pageScrollInterruptible: false,
-      });
-      this.pageScroll.start(pageScrollInstance);
+      // const pageScrollInstance = PageScrollInstance.newInstance({
+      //   document: this.window.document,
+      //   scrollTarget: '#experience',
+      //   pageScrollInterruptible: false,
+      // });
+      // this.pageScroll.start(pageScrollInstance);
   }
 
   getDocumentURL() {

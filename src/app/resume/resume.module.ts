@@ -7,7 +7,7 @@ import {SharedModule} from '../shared/shared.module';
 import {ResumeCardComponent} from './resume-card/resume-card.component';
 import {SkillBucketComponent} from './skill-bucket/skill-bucket.component';
 import {NavigationArrowComponent} from './navigation-arrow/navigation-arrow.component';
-import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
+// import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 
 @NgModule({
@@ -15,7 +15,7 @@ import {NgxPageScrollModule} from 'ngx-page-scroll';
     CommonModule,
     RouterModule,
     SharedModule,
-    ScrollToModule.forRoot(),
+    // ScrollToModule.forRoot(),
     NgxPageScrollModule
   ],
   declarations: [ResumeBaseComponent,
