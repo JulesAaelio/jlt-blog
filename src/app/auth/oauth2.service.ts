@@ -1,4 +1,3 @@
-import { LOCAL_STORAGE , WINDOW} from '@ng-toolkit/universal';
 import {Inject, Injectable} from '@angular/core';
 import {User} from './User';
 import {HttpClient} from '@angular/common/http';
@@ -11,7 +10,7 @@ import {environment} from '../../environments/environment';
 export class OAuth2Service {
   user;
 
-  constructor(@Inject(WINDOW) private window: Window, @Inject(LOCAL_STORAGE) private localStorage: any, private http: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   static splitFragment(fragment: string) {
@@ -25,19 +24,19 @@ export class OAuth2Service {
   }
 
   initLogin(redirectTo: string) {
-    this.localStorage.setItem('redirectTo', redirectTo);
-    this.window.location.href = environment.auth_end_point + '/oauth/v2/auth' +
+    localStorage.setItem('redirectTo', redirectTo);
+    window.location.href = environment.auth_end_point + '/oauth/v2/auth' +
       '?response_type=token' +
       '&client_id=' + environment.app_id +
-      '&redirect_uri=' + this.window.location.origin + '/auth';
+      '&redirect_uri=' + window.location.origin + '/auth';
   }
 
   getToken() {
-    const expddate = this.localStorage.getItem('jl_exp_date');
+    const expddate = localStorage.getItem('jl_exp_date');
     if (expddate && new Date(expddate).getTime() < new Date().getTime()) {
       this.logoff();
     }
-    return this.localStorage.getItem('jl_token');
+    return localStorage.getItem('jl_token');
   }
 
   login(fragment) {
@@ -45,10 +44,10 @@ export class OAuth2Service {
     const expdate = new Date();
     if (params['access_token'] !== undefined && params['expires_in'] !== undefined) {
       expdate.setSeconds(expdate.getSeconds() + Number.parseInt(params['expires_in']));
-      this.localStorage.setItem('jl_token', params['access_token']);
-      this.localStorage.setItem('jl_exp_date', expdate.toISOString());
+      localStorage.setItem('jl_token', params['access_token']);
+      localStorage.setItem('jl_exp_date', expdate.toISOString());
     }
-    let redirectTo = this.localStorage.getItem('redirectTo');
+    let redirectTo = localStorage.getItem('redirectTo');
 
     if (!redirectTo) {
       redirectTo = '/';
@@ -56,14 +55,14 @@ export class OAuth2Service {
     this.getUser().subscribe((r) => {
       this.user = r;
       // not using router.navigate to force reload.
-      this.window.location.assign(this.window.location.origin + redirectTo);
+      window.location.assign(window.location.origin + redirectTo);
     });
   }
 
   logoff() {
-    this.localStorage.removeItem('jl_token');
-    this.localStorage.removeItem('jl_exp_date');
-    this.localStorage.removeItem('redirectTo');
+    localStorage.removeItem('jl_token');
+    localStorage.removeItem('jl_exp_date');
+    localStorage.removeItem('redirectTo');
     this.user = null;
   }
 

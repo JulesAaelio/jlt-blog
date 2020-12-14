@@ -1,4 +1,3 @@
-import {NgtUniversalModule} from '@ng-toolkit/universal';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
@@ -14,7 +13,6 @@ import {ResumeModule} from './resume/resume.module';
   ],
   imports: [
     CommonModule,
-    NgtUniversalModule,
     HttpClientModule,
     AuthModule,
     RoutingModule,
