@@ -36,10 +36,10 @@ export class ResumeComponent implements OnInit {
 
       this.meta.addTag({name: 'author', content: this.resume.name});
       this.meta.addTag({property: 'og:image', content: this.getIllustrationAddress()});
-      this.meta.addTag({property: 'og:title', content: `${this.resume.name} | ${this.resume.job}`});
+      this.meta.addTag({property: 'og:title', content: `${this.resume.name} | ${this.resume.title}`});
       this.meta.addTag({property: 'og:type', content: 'website'});
-      this.title.setTitle(`${this.resume.name} | ${this.resume.job}`);
-      this.meta.addTag({property: 'og:description', content: `${this.resume.bio}`});
+      this.title.setTitle(`${this.resume.name} | ${this.resume.headline}`);
+      this.meta.addTag({property: 'og:description', content: `${this.resume.person.bio}`});
     });
     this.resumeService.getSkills(environment.default_resume).subscribe(skills => {
       this.skills = skills;
@@ -106,7 +106,7 @@ export class ResumeComponent implements OnInit {
   }
 
   getDocumentURL() {
-    return environment.resume_rest_end_point + '/' + this.resume.document;
+    return environment.resume_rest_end_point + '/' + this.resume.download;
   }
 
   getIllustrationAddress() {

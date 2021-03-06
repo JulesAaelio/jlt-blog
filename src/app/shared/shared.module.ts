@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {RouterModule} from '@angular/router';
+import { UrlPipe } from './url.pipe';
 
 @NgModule({
   imports: [
@@ -9,10 +10,12 @@ import {RouterModule} from '@angular/router';
     RouterModule
   ],
   declarations: [
-    SidebarComponent
+    SidebarComponent,
+    UrlPipe
   ],
   exports: [
-    SidebarComponent
+    SidebarComponent,
+    UrlPipe
   ]
 
 })
