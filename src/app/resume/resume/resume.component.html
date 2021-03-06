@@ -28,7 +28,7 @@
         <!--<app-navigation-arrow [direction]="'up'" [target]="'experience'"></app-navigation-arrow>-->
         <h2 class="center-align">FORMATION</h2>
         <div class="full-width  flex-wrap-around">
-          <app-resume-card *ngFor="let formation of resume.formations" [data]="formation"></app-resume-card>
+          <app-resume-card *ngFor="let education of resume.educations" [data]="education"></app-resume-card>
         </div>
         <app-navigation-arrow [direction]="'down'" [target]="'competences'"></app-navigation-arrow>
       </section>

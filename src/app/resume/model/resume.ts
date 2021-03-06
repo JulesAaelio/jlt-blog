@@ -1,5 +1,5 @@
 import {Experience} from './experience';
-import {Formation} from './formation';
+import {Education} from './education';
 import {Person} from './Person';
 
 export class Resume {
@@ -8,6 +8,6 @@ export class Resume {
   headline: string;
   download: string;
   experiences: Experience[];
-  formations: Formation[];
+  educations: Education[];
   person: Person;
 }
