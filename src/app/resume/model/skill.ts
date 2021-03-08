@@ -1,3 +1,3 @@
 export class Skill {
-  label: string;
+  name: string;
 }
