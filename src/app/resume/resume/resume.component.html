@@ -35,11 +35,9 @@
       <section id="competences">
         <!--<app-navigation-arrow [direction]="'up'" [target]="'formation'"></app-navigation-arrow>-->
         <h2 class="center-align">COMPETENCES</h2>
-        <div>
-          <span class="badge badge-default badge-rounded "
-              *ngFor="let skill of resume.skills">{{skill.name}}</span>
+        <div class="skills-container">
+          <app-skill-bucket *ngFor="let group of groupedSkills | keyvalue" [name]="group.key"  [skills]="group.value"></app-skill-bucket>
         </div>
-<!--          <app-skill-bucket *ngFor="let group of skills" [group]="group"></app-skill-bucket>-->
       </section>
     </div>
   </div>

@@ -7,6 +7,7 @@ import {SkillGroup} from '../model/skill-group';
 // import {isPlatformBrowser} from '@angular/common';
 import {Meta, Title} from '@angular/platform-browser';
 import {PageScrollInstance, PageScrollService} from 'ngx-page-scroll-core';
+import {Skill} from '../model/skill';
 
 @Component({
   selector: 'app-resume',
@@ -20,6 +21,7 @@ export class ResumeComponent implements OnInit {
   sections;
   currentSection;
   deltaSum = 0;
+  groupedSkills = {};
 
 
   constructor(private resumeService: ResumeService, private pageScroll: PageScrollService,
@@ -33,6 +35,13 @@ export class ResumeComponent implements OnInit {
         if (new Date(a.begin_date) === new Date(b.begin_date)) { return 0; }
         return new Date(a.begin_date) < new Date(b.begin_date) ? 1 : -1;
       });
+      this.resume.skills.forEach((skill: Skill) => {
+        if (this.groupedSkills[skill.skill_category.name]) {
+          this.groupedSkills[skill.skill_category.name].push(skill);
+        } else {
+          this.groupedSkills[skill.skill_category.name] = [skill];
+        }
+      });
 
       this.meta.addTag({name: 'author', content: this.resume.name});
       this.meta.addTag({property: 'og:image', content: this.getIllustrationAddress()});
@@ -40,9 +49,6 @@ export class ResumeComponent implements OnInit {
       this.meta.addTag({property: 'og:type', content: 'website'});
       this.title.setTitle(`${this.resume.name} | ${this.resume.headline}`);
       this.meta.addTag({property: 'og:description', content: `${this.resume.person.bio}`});
-    });
-    this.resumeService.getSkills(environment.default_resume).subscribe(skills => {
-      this.skills = skills;
     });
 
     // if(isPlatformBrowser(this.platformId)) {
