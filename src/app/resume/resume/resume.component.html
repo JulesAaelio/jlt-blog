@@ -2,7 +2,7 @@
   <div class="row blog-row">
     <app-sidebar [data]="resume.person" [resumeMode]="true"></app-sidebar>
     <div class="col l3 show-on-large sidebar-placeholder">sidebar large placeholder</div>
-    <div class="col s12 m12 l9  resume" (wheel)="onScroll($event)">
+    <div class="col s12 m12 l9 resume">
       <section id="headlines" class="hide-on-med-and-down">
         <div class="center-xy center-align full-width">
           <h1 >{{resume.title|uppercase}}</h1>
