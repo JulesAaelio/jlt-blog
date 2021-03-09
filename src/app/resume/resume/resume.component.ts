@@ -8,6 +8,7 @@ import {SkillGroup} from '../model/skill-group';
 import {Meta, Title} from '@angular/platform-browser';
 import {PageScrollInstance, PageScrollService} from 'ngx-page-scroll-core';
 import {Skill} from '../model/skill';
+import {ViewportScroller} from '@angular/common';
 
 @Component({
   selector: 'app-resume',
@@ -17,15 +18,11 @@ import {Skill} from '../model/skill';
 export class ResumeComponent implements OnInit {
 
   resume: Resume = new Resume();
-  skills: SkillGroup[] = [];
-  sections;
-  currentSection;
-  deltaSum = 0;
   groupedSkills = {};
 
-
-  constructor(private resumeService: ResumeService, private pageScroll: PageScrollService,
-              @Inject(PLATFORM_ID) private platformId: string, private meta: Meta, private title: Title) {
+  constructor(private resumeService: ResumeService,
+              @Inject(PLATFORM_ID) private platformId: string, private meta: Meta,
+              private title: Title, private viewPortScroller: ViewportScroller) {
   }
 
   ngOnInit() {
@@ -50,65 +47,11 @@ export class ResumeComponent implements OnInit {
       this.title.setTitle(`${this.resume.name} | ${this.resume.headline}`);
       this.meta.addTag({property: 'og:description', content: `${this.resume.person.bio}`});
     });
-
-    // if(isPlatformBrowser(this.platformId)) {
-    //   this.sections = this.window.document.querySelectorAll('section, #sidebar');
-    //   this.findCurrentSection();
-    // }
-  }
-
-  onScroll(event) {
-    // console.log(this.currentSection);
-    // this.deltaSum += event.deltaY;
-    // if (Math.abs(this.deltaSum) >= Math.abs(4 * event.deltaY) && window.innerWidth > 601) {
-    //   let target = null;
-    //   if (event.deltaY < 0 && this.currentSection > 0) {
-    //     target = this.currentSection - 1;
-    //   } else if (event.deltaY > 0 && this.currentSection < this.sections.length) {
-    //     target = this.currentSection + 1;
-    //   }
-    //   if (target !== undefined && target !== null) {
-    //
-    //     const pageScrollInstance = PageScrollInstance.newInstance({
-    //       document: document,
-    //       scrollTarget: '#' + this.sections[target].id,
-    //       pageScrollInterruptible: false,
-    //     });
-    //     this.pageScroll.start(pageScrollInstance);
-    //     this.currentSection = target;
-    //     this.deltaSum = 0;
-    //   }
-    //
-    // }
-  }
-
-  findCurrentSection() {
-    this.sections.forEach((o, i) => {
-      if (location.hash) {
-        console.log(location.hash);
-        if ('#' + o.id === location.hash) {
-          this.currentSection = i;
-        }
-      } else {
-        if (o.offsetTop === window.pageYOffset) {
-          this.currentSection = i;
-        }
-      }
-    });
-    console.log(this.currentSection);
-    if (!this.currentSection) {
-      this.currentSection = 0;
-    }
   }
 
   scrollDown(event) {
     event.preventDefault();
-      // const pageScrollInstance = PageScrollInstance.newInstance({
-      //   document: this.window.document,
-      //   scrollTarget: '#experience',
-      //   pageScrollInterruptible: false,
-      // });
-      // this.pageScroll.start(pageScrollInstance);
+    this.viewPortScroller.scrollToAnchor('experience');
   }
 
   getDocumentURL() {
