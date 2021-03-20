@@ -1,5 +1,5 @@
 <div class="skill-bucket">
   <span class="title">{{name}} | </span>
-  <span class="badge badge-default badge-rounded" [routerLink]="['skill',skill.id]"
+  <span class="badge badge-default badge-rounded skill-badge" [routerLink]="['skill',skill.id]"
         *ngFor="let skill of skills">{{skill.name}}</span>
 </div>
