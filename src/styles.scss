@@ -15,6 +15,7 @@ $colors: map_merge($colors, ("shades": $shades));
 @import "~materialize-css/sass/components/buttons";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
+
 html, body {
   margin: 0;
   padding: 0;
@@ -34,8 +35,9 @@ a {
 //SIDEBAR
 
 .sidebar {
-  position: fixed;
-  height: 100%;
+  position: sticky;
+  top:0;
+  height: 100vh;
   min-height: 100%;
   left: 0;
 

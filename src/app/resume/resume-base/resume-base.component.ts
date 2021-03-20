@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {environment} from '../../../environments/environment';
+import {ResumeService} from '../resume.service';
+import {Resume} from '../model/resume';
 
 @Component({
   selector: 'app-resume-base',
@@ -7,10 +10,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ResumeBaseComponent implements OnInit {
 
-  constructor() {
+  public resume: Resume;
+  constructor(private resumeService: ResumeService) {
   }
 
   ngOnInit() {
+    this.resumeService.getResume(environment.default_resume).subscribe(resume => {
+      this.resume = resume;
+    });
   }
 
 }
