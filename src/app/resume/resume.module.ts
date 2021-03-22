@@ -9,6 +9,7 @@ import {SkillBucketComponent} from './skill-bucket/skill-bucket.component';
 import {NavigationArrowComponent} from './navigation-arrow/navigation-arrow.component';
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
+import { RealisationCardComponent } from './realisation-card/realisation-card.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { SkillDetailComponent } from './skill-detail/skill-detail.component';
     SkillBucketComponent,
     NavigationArrowComponent,
     SkillDetailComponent,
+    RealisationCardComponent,
 
   ],
   exports: [

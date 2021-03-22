@@ -54,9 +54,6 @@ export class ResumeComponent implements OnInit {
     this.viewPortScroller.scrollToAnchor('experience');
   }
 
-  getDocumentURL() {
-    return environment.resume_rest_end_point + '/' + this.resume.download;
-  }
 
   getIllustrationAddress() {
     return environment.resume_rest_end_point + '/image/banner.png';

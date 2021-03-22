@@ -1,0 +1,13 @@
+.card-image {
+  padding-top: 39.69%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  position: absolute;
+}
+
+.card-action {
+  text-align: right;
+}

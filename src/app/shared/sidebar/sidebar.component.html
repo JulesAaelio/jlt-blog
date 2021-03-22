@@ -1,24 +1,20 @@
 <div class="sidebar col s12 m12 l12" id="sidebar">
-  <img class="sidebar-avatar img-rounded" [src]="avatar_url">
+  <img class="sidebar-avatar img-rounded" [src]="avatar_url | url">
   <div>
-    <h1>{{data.name}}</h1>
+    <h1>{{data.firstname | titlecase}} {{data.lastname | uppercase}}</h1>
     <div class="center-align resume-city"><i class="fa fa-home"></i> {{data.city}}</div>
     <div class="show-on-medium-and-down hide-on-large-only">
-      <h1>{{data.job|uppercase}}</h1>
-      <h2 class="headline">{{data.headline|uppercase}}</h2>
+      <h1>{{resume.title|uppercase}}</h1>
+      <h2 class="headline">{{resume.headline|uppercase}}</h2>
     </div>
-
 
     <blockquote>
       {{data.bio}}
     </blockquote>
 
-    <!--<div class="center-align">-->
-
-    <!--</div>-->
   </div>
   <div class="center-align sidebar-actions">
-    <a *ngIf="resumeMode" [href]="" class="btn btn-large white grey-text hide-on-large-only " target="_blank"><i
+    <a *ngIf="resumeMode" [href]="resume.download | url" class="btn btn-large white grey-text hide-on-large-only " target="_blank"><i
       class="fa fa-download"></i> TELECHARGER UN CV</a>
     <a *ngIf="resumeMode" [routerLink]="'/blog'" class="btn btn-large white grey-text " target="_blank"><i
       class="fa fa-newspaper"></i> Visiter mon blog ! </a>

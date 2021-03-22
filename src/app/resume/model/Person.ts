@@ -8,4 +8,6 @@ export class Person {
     twitter: string;
     bio: string;
     city: string;
+    firstname: string;
+    lastname: string;
 }
