@@ -11,9 +11,9 @@ import {ResumeBaseComponent} from '../resume/resume-base/resume-base.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'resume', pathMatch: 'full'},
-  {path: 'auth', component: AuthBaseComponent, children: authRoutes},
-  {path: 'blog', component: BlogBaseComponent, children: blogRoutes},
-  {path: 'blog/admin', component: BlogBaseComponent, children: blogAdminRoutes, canActivate: [AuthenticatedGuard]},
+  // {path: 'auth', component: AuthBaseComponent, children: authRoutes},
+  // {path: 'blog', component: BlogBaseComponent, children: blogRoutes},
+  // {path: 'blog/admin', component: BlogBaseComponent, children: blogAdminRoutes, canActivate: [AuthenticatedGuard]},
   {path: 'resume', component: ResumeBaseComponent, children: resumeRoutes},
 ];
 
