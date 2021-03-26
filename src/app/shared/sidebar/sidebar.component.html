@@ -1,5 +1,5 @@
 <div class="sidebar col s12 m12 l12" id="sidebar">
-  <img class="sidebar-avatar img-rounded" [src]="avatar_url | url">
+  <img class="sidebar-avatar img-rounded" [src]="resume.person.picture | url">
   <div>
     <h1>{{data.firstname | titlecase}} {{data.lastname | uppercase}}</h1>
     <div class="center-align resume-city"><i class="fa fa-home"></i> {{data.city}}</div>

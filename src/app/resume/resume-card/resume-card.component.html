@@ -16,7 +16,8 @@
            [class.fa-building]="data.company"
            [class.fa-school]="data.school"></i> - {{data.company || data.school}}</a>
     </div>
-    <p [innerHtml]="data.details">
+    <p>
+      {{data.result}} - <span [innerHTML]="data.details"></span>
       <!--{{data.details}} ...-->
     </p>
   </div>
