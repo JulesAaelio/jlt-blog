@@ -1,14 +1,14 @@
 <div>
   <div class="row blog-row">
-    <app-sidebar [data]="resume" [resumeMode]="true"></app-sidebar>
-    <div class="col l3 show-on-large sidebar-placeholder">sidebar large placeholder</div>
-    <div class="col s12 m12 l9  resume" (wheel)="onScroll($event)">
+<!--    <app-sidebar [data]="resume.person" [resumeMode]="true"></app-sidebar>-->
+<!--    <div class="col l3 show-on-large sidebar-placeholder">sidebar large placeholder</div>-->
+    <div class="col s12 m12 l12 resume">
       <section id="headlines" class="hide-on-med-and-down">
         <div class="center-xy center-align full-width">
-          <h1 >{{resume.job|uppercase}}</h1>
+          <h1 >{{resume.title|uppercase}}</h1>
           <h2 >{{resume.headline|uppercase}}</h2>
           <div class="resume-actions">
-            <a [href]="getDocumentURL()" target="_blank" class="btn btn-large white grey-text"><i
+            <a [href]="resume.download | url" target="_blank" class="btn btn-large white grey-text"><i
               class="fa fa-download"></i> TELECHARGER UN CV</a> -
             <a href="#" (click)="scrollDown($event)" class="btn btn-large grey jlt"><i class="fa fa-arrow-down"></i>
               DECOUVRIR LA SUITE</a>
@@ -28,15 +28,15 @@
         <!--<app-navigation-arrow [direction]="'up'" [target]="'experience'"></app-navigation-arrow>-->
         <h2 class="center-align">FORMATION</h2>
         <div class="full-width  flex-wrap-around">
-          <app-resume-card *ngFor="let formation of resume.formations" [data]="formation"></app-resume-card>
+          <app-resume-card *ngFor="let education of resume.educations" [data]="education"></app-resume-card>
         </div>
         <app-navigation-arrow [direction]="'down'" [target]="'competences'"></app-navigation-arrow>
       </section>
       <section id="competences">
         <!--<app-navigation-arrow [direction]="'up'" [target]="'formation'"></app-navigation-arrow>-->
         <h2 class="center-align">COMPETENCES</h2>
-        <div class="flex-wrap">
-          <app-skill-bucket *ngFor="let group of skills" [group]="group"></app-skill-bucket>
+        <div class="skills-container">
+                    <app-skill-bucket *ngFor="let group of groupedSkills | keyvalue" [name]="group.key"  [skills]="group.value"></app-skill-bucket>
         </div>
       </section>
     </div>

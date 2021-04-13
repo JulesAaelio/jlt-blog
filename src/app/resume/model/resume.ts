@@ -1,20 +1,15 @@
 import {Experience} from './experience';
-import {Formation} from './formation';
+import {Education} from './education';
+import {Person} from './Person';
+import {Skill} from './skill';
 
 export class Resume {
   name: string;
-  job: string;
+  title: string;
   headline: string;
-  mail: string;
-  phone: string;
-  picture: string;
-  linkedin: string;
-  website: string;
-  github: string;
-  twitter: string;
-  bio: string;
-  city: string;
-  document: string;
+  download: string;
   experiences: Experience[];
-  formations: Formation[];
+  educations: Education[];
+  skills: Skill[];
+  person: Person;
 }

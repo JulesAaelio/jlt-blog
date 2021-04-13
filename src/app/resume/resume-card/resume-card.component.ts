@@ -16,9 +16,4 @@ export class ResumeCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  getIllustrationAddress() {
-    // return this.data.image;
-    return environment.resume_rest_end_point + '/' + this.data.image;
-  }
-
 }

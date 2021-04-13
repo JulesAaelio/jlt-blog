@@ -15,9 +15,11 @@ $colors: map_merge($colors, ("shades": $shades));
 @import "~materialize-css/sass/components/buttons";
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
+
 html, body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 //TYPOS
@@ -30,11 +32,23 @@ a {
   color: black;
 }
 
+h1 {
+  font-size: 3.5em;
+}
+h2 {
+  font-size: 2.5em;
+}
+h1, h2 {
+  font-weight: 900;
+  color: #333333;
+}
+
 //SIDEBAR
 
 .sidebar {
-  position: fixed;
-  height: 100%;
+  position: sticky;
+  top:0;
+  height: 100vh;
   min-height: 100%;
   left: 0;
 
@@ -50,7 +64,16 @@ a {
 
   h1, h2 {
     text-align: center;
+    color: white;
   }
+
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+
 
   blockquote {
     text-align: justify;
@@ -238,7 +261,7 @@ a {
 
   .badge {
     font-size: initial !important;
-    padding: 0.5rem;
+    padding: 0.2rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -325,7 +348,9 @@ a {
   font-size: 1.2em;
   //margin-right: 1rem;
   margin-bottom: 1em;
-  padding: 0.75rem;
+  padding: 1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
   //min-width: 130px;
   &.badge-default {
     background-color: $jlt-grey;
@@ -342,6 +367,53 @@ a {
     border-radius: 999px;
     border: solid 1px;
   }
+}
+
+@media #{$small-and-down} {
+  .badge {
+    display: inline-block;
+    font-size: 18em;
+    //margin-right: 1rem;
+    margin-bottom: 1em;
+    padding: 0.5rem;
+    //margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    //min-width: 130px;
+    &.badge-default {
+      background-color: $jlt-grey;
+      color: white;
+      border-color: $jlt-grey;
+    }
+
+    &.badge-fw {
+      width: 42%;
+      text-align: center;
+    }
+
+    &.badge-rounded {
+      border-radius: 999px;
+      border: solid 1px;
+    }
+  }
+  .skills-container .title {
+    font-size: initial !important;
+  }
+}
+
+@media #{$small-and-down} {
+  .card-image {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.5em !important;
+  }
+
+  .card-body {
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+  }
+
 }
 
 @media #{$small-and-down} {
@@ -363,3 +435,6 @@ a {
 .card-body {
   padding: 20px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

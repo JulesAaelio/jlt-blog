@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-image">
+    <img [src]="realisation.illustration | url">
+  </div>
+  <div class="card-content">
+    <span class="card-title">{{realisation.title}}</span>
+<!--    <div class="card-location">-->
+<!--      <a href="{{data.link}}">-->
+<!--        <i class="fa "-->
+<!--           [class.fa-building]="data.company"-->
+<!--           [class.fa-school]="data.school"></i> - {{data.company || data.school}}</a>-->
+<!--    </div>-->
+    <p [innerHtml]="realisation.content">
+    <p >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lorem arcu, accumsan ut mi a, porttitor scelerisque ante. Vestibulum feugiat massa id diam sagittis dignissim.
+    </p>
+
+  </div>
+  <div class="card-action">
+    <a href="{{realisation.link}}">VOIR PLUS</a>
+  </div>
+</div>
+

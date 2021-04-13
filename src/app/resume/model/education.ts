@@ -1,4 +1,4 @@
-export class Formation {
+export class Education {
   begin_date: string;
   end_date: string;
   degree: string;
