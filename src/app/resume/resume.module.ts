@@ -7,7 +7,6 @@ import {SharedModule} from '../shared/shared.module';
 import {ResumeCardComponent} from './resume-card/resume-card.component';
 import {SkillBucketComponent} from './skill-bucket/skill-bucket.component';
 import {NavigationArrowComponent} from './navigation-arrow/navigation-arrow.component';
-import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 import { RealisationCardComponent } from './realisation-card/realisation-card.component';
 import {MatChipsModule} from '@angular/material/chips';
@@ -17,7 +16,6 @@ import {MatChipsModule} from '@angular/material/chips';
         CommonModule,
         RouterModule,
         SharedModule,
-        NgxPageScrollModule,
         MatChipsModule
     ],
   declarations: [ResumeBaseComponent,
