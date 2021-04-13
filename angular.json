@@ -36,6 +36,7 @@
               }
             ],
             "styles": [
+              "./src/angular-material-theme.scss",
               "./src/styles.scss",
               "./node_modules/prismjs/themes/prism-okaidia.css"
             ],
@@ -63,6 +64,12 @@
               "buildOptimizer": true
             },
             "serve": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ],
               "extractCss": true,
               "namedChunks": true,
               "vendorChunk": true,
@@ -96,6 +103,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./src/angular-material-theme.scss",
               "src/styles.css"
             ],
             "scripts": [],
@@ -134,7 +142,7 @@
               ]
             }
           }
-            }
+        }
       }
     },
     "jlt-blog-e2e": {

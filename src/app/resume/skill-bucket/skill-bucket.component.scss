@@ -1,0 +1,19 @@
+.title {
+  font-size: 20px;
+  font-weight: 300;
+  margin-left: 0.1em;
+  margin-bottom: 0.5em;
+}
+
+.skill-badge {
+  cursor: pointer;
+}
+
+.skill-bucket {
+  //display: flex;
+  //flex-direction: row;
+  margin-bottom: 20px;
+}
+//@media #{$small-and-down} {
+//  font-size: initial !important;
+//}

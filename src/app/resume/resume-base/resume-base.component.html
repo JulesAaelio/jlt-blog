@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div *ngIf="resume">
+  <div class="row blog-row resume-container">
+<!--    <div class="col l3 show-on-large sidebar-placeholder">sidebar large placeholder</div>-->
+    <div class="col l3 sidebar-container">
+      <app-sidebar [data]="resume.person" [resume]="resume" [resumeMode]="true"></app-sidebar>
+    </div>
+    <div class="col l9">
+      <router-outlet ></router-outlet>
+    </div>
+</div>
+</div>

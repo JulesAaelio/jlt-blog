@@ -1,29 +1,25 @@
-<div class="sidebar col s12 m12 l3" id="sidebar">
-  <img class="sidebar-avatar img-rounded" [src]="avatar_url">
+<div class="sidebar col s12 m12 l12" id="sidebar">
+  <img class="sidebar-avatar img-rounded" [src]="resume.person.picture | url">
   <div>
-    <h1>{{data.name}}</h1>
+    <h1>{{data.firstname | titlecase}} {{data.lastname | uppercase}}</h1>
     <div class="center-align resume-city"><i class="fa fa-home"></i> {{data.city}}</div>
     <div class="show-on-medium-and-down hide-on-large-only">
-      <h1>{{data.job|uppercase}}</h1>
-      <h2 class="headline">{{data.headline|uppercase}}</h2>
+      <h1>{{resume.title|uppercase}}</h1>
+      <h2 class="headline">{{resume.headline|uppercase}}</h2>
     </div>
-
 
     <blockquote>
       {{data.bio}}
     </blockquote>
 
-    <!--<div class="center-align">-->
-
-    <!--</div>-->
   </div>
   <div class="center-align sidebar-actions">
-    <a *ngIf="resumeMode" [href]="" class="btn btn-large white grey-text hide-on-large-only " target="_blank"><i
+    <a *ngIf="resumeMode" [href]="resume.download | url" class="btn btn-large white grey-text hide-on-large-only " target="_blank"><i
       class="fa fa-download"></i> TELECHARGER UN CV</a>
-    <a *ngIf="resumeMode" [routerLink]="'/blog'" class="btn btn-large white grey-text " target="_blank"><i
-      class="fa fa-newspaper"></i> Visiter mon blog ! </a>
-    <a *ngIf="!resumeMode" [routerLink]="'/resume'" class="btn btn-large white grey-text " target="_blank"><i
-      class="fa fa-trophy"></i> Découvrir mon cv ! </a>
+<!--    <a *ngIf="resumeMode" [routerLink]="'/blog'" class="btn btn-large white grey-text " target="_blank"><i-->
+<!--      class="fa fa-newspaper"></i> Visiter mon blog ! </a>-->
+<!--    <a *ngIf="!resumeMode" [routerLink]="'/resume'" class="btn btn-large white grey-text " target="_blank"><i-->
+<!--      class="fa fa-trophy"></i> Découvrir mon cv ! </a>-->
   </div>
   <div class="networks">
     <a class="fab fa-2x fa-github" target="_blank" [href]="'https://github.com/'+data.github"></a>
@@ -36,6 +32,5 @@
 
     <a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>
     <div class="resume-phone-number" *ngIf="displayPhoneNumber && resumeMode">{{data.phone}}</div>
-    <!--<a class="fas fa-2x fa-envelope" target="_blank" [href]="'mailto:'+data.mail"></a>-->
   </div>
 </div>

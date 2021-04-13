@@ -12,8 +12,8 @@ export class ResumeService {
   constructor(private http: HttpClient) {
   }
 
-  getResume(label) {
-    return this.http.get<Resume>(environment.resume_rest_end_point + '/cvs/' + label);
+  getResume(id) {
+    return this.http.get<Resume>(environment.resume_rest_end_point + '/resume/' + id);
   }
 
   getSkills(label: string) {

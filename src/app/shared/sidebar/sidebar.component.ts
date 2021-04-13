@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {environment} from '../../../environments/environment';
+import {Person} from '../../resume/model/Person';
+import {Resume} from '../../resume/model/resume';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +11,8 @@ import {environment} from '../../../environments/environment';
 export class SidebarComponent implements OnInit {
 
   avatar_url = environment.rest_end_point + '/public/avatar.png';
-  @Input() data;
+  @Input() data: Person;
+  @Input() resume: Resume;
   @Input() resumeMode = false;
   displayPhoneNumber = false;
   constructor() { }
