@@ -261,7 +261,7 @@ h1, h2 {
 
   .badge {
     font-size: initial !important;
-    padding: 0.5rem;
+    padding: 0.2rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -435,3 +435,6 @@ h1, h2 {
 .card-body {
   padding: 20px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

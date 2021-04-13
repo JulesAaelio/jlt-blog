@@ -10,14 +10,16 @@ import {NavigationArrowComponent} from './navigation-arrow/navigation-arrow.comp
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 import { RealisationCardComponent } from './realisation-card/realisation-card.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    SharedModule,
-    NgxPageScrollModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        SharedModule,
+        NgxPageScrollModule,
+        MatChipsModule
+    ],
   declarations: [ResumeBaseComponent,
     ResumeComponent,
     ResumeCardComponent,
