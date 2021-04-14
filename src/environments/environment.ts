@@ -7,7 +7,7 @@ export const environment = {
   rest_end_point: 'https://api.blog.juleslaurent.fr',
   auth_end_point: 'http://api.perso.local',
   resume_rest_end_point: 'https://api.juleslaurent.fr',
-  default_resume: 'FIRST',
+  default_resume: '1',
   app_id: '3_2ckxcze1y134koso8owk84k00woc8gwc44ocwskko4o088ws00',
   base_title: 'Jules LAURENT',
 };
