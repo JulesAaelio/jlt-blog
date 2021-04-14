@@ -1,12 +1,11 @@
 <div *ngIf="skill">
   <a routerLink="/resume" fragment="competences"><span class="fa fa-arrow-left"></span> Retour à la liste des compétences </a>
   <h1 class="center-align"> COMPETENCE : {{skill.name}}</h1>
-  <div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid amet aspernatur at commodi dolorum enim, eos error fuga iusto magnam nostrum nulla omnis repellendus, sed tempora tenetur veniam voluptates.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet animi beatae culpa cum, debitis deleniti eligendi excepturi ipsa magnam optio placeat quam quibusdam quisquam repellat repudiandae rerum, saepe veniam?
+  <div [innerHTML]="skill.description">
+
   </div>
 
-  <section>
+  <section *ngIf="skill.experiences.length > 0">
     <h2> EXPERIENCES PROFESIONNELLES</h2>
     <div class="flex-wrap-around">
       <app-resume-card *ngFor="let experience of skill.experiences" [data]="experience"></app-resume-card>
