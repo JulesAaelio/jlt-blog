@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  rest_end_point: 'https://api.blog.juleslaurent.fr',
+  rest_end_point: 'https://api.juleslaurent.fr',
   auth_end_point: 'http://api.perso.local',
   resume_rest_end_point: 'https://api.juleslaurent.fr',
   default_resume: '1',

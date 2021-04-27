@@ -1,5 +1,6 @@
 .sidebar-container {
   padding: 0;
+  min-width: 443px;
 }
 
 .resume-container {
